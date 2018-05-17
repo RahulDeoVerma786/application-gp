@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="WqZB6QTbPXQZoN2Pk87sYavcmlppXkTqjKOVWsYuTSI" />
+    <title>WandX - ERC20 Token marketplace - Peer to peer creation and trade of ERC20 Tokens | Ethereum ERC20 token trading</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="ERC20 token, ERC20 token trading, Ethereum, Ethereum trading, ERC20 token market place, ERC20 token buy sell, Decentralised exchange">
+    <!-- facebook card -->
+    <meta property="og:image" content="images/wandx-logo.svg">
+    <meta property="og:title" content="WandX - ERC20 Token marketplace - Peer to peer creation and trade of ERC20 Tokens">
+    <meta property="og:url" content="https://www.wandx.co/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WandX">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@WandXDapp">
+    <meta name="twitter:creator" content="@WandXDapp">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css">
+    <script src="./javascripts/jquery-3.2.1.min.js"></script>
+    <script src="./javascripts/bootstrap.min.js"></script>
+    <script src="./javascripts/owl.carousel.js"></script>
+    <link rel="stylesheet" href="stylesheets/custom.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+
+    <!-- Start of wandx Zendesk Widget script -->
+    <script>
+        window.zEmbed || function(e, t) {
+            var n, o, d, i, s, a = [],
+                r = document.createElement("iframe");
+            window.zEmbed = function() {
+                a.push(arguments)
+            }, window.zE = window.zE || window.zEmbed, r.src = "javascript:false", r.title = "", r.role = "presentation", (r.frameElement || r).style.cssText = "display: none", d = document.getElementsByTagName("script"), d = d[d.length - 1], d.parentNode.insertBefore(r, d), i = r.contentWindow, s = i.document;
+            try {
+                o = s
+            } catch (e) {
+                n = document.domain, r.src = 'javascript:var d=document.open();d.domain="' + n + '";void(0);', o = s
+            }
+            o.open()._l = function() {
+                var e = this.createElement("script");
+                n && (this.domain = n), e.id = "js-iframe-async", e.src = "https://assets.zendesk.com/embeddable_framework/main.js", this.t = +new Date, this.zendeskHost = "wandx.zendesk.com", this.zEQueue = a, this.body.appendChild(e)
+            }, o.write('<body onload="document._l();">'), o.close()
+        }();
+        window.zESettings = {
+            webWidget: {
+                color: {
+                    theme: '#30779b'
+                }
+            }
+        };
+    </script>
+    <!-- End of wandx Zendesk Widget script -->
+
+    <div class="page_wrapper">
+        <div class="page_container">
+            <header class="header_wrapper">
+                <div class="header_container">
+                    <div class="logo_wrapper">
+                        <div class="logo_container">
+                            <a href="/">
+                                <img width="111" height="43" src="images/wandx.png" alt="WandX ethereum,ERC20 token trading platform logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="responsive_menu_wrapper">
+                        <div class="responsive_menu_container" onclick="toggle_menu()">
+                            <img width="30" height="21" src="images/menu-open.svg" alt="menu open">
+                        </div>
+                    </div>
+                    <div class="nav_bar_wrapper">
+                        <div class="responsive_menu_wrapper">
+                            <div class="responsive_menu_container" onclick="toggle_menu()">
+                                <img width="30" height="30" src="images/menu-close.svg" alt="menu close">
+                            </div>
+                        </div>
+                        <div class="nav_bar_container">
+                            <ul class="nav_menu">
+                                <li><a href="#">Whitepaper</a></li>
+                                <li><a href="https://www.wandx.co/">How It Works</a></li>
+                                <li><a href="https://www.wandx.co/">Roadmap</a></li>
+                                <li><a href="https://www.wandx.co/">Team &amp; Partners</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </header>
+            <div class="policy-holder white-paper">
+                <h1>WandX - Decentralized financial markets for crypto-assets</h1>
+                <div class="privacy-holder">
+                    <div class="privacy-policy-points">
+                        <ol>
+                            <li>Executive summary
+                                <ul class="no-dots">
+                                    <li>One of the main functions of a banking institution is to accept surplus money from depositors/investors and lend it to borrowers to grow their business, fund a project, or acquire an asset. Over the years, plain vanilla
+                                        lending by banks and financial institutions has been transformed by innovations such as securitization and structured instruments, while the risk management function has been aided by the application of derivatives.
+                                        Financial instruments have helped increase the liquidity of assets and hedge risk arising from one or more factors such as interest rate movements, commodity price volatility, currency fluctuations, and credit risk.
+                                        The rise of Fintech over the past decade has witnessed the birth of a number of cryptocurrencies and a new asset class.
+                                    </li>
+                                    <li>With the rapidly growing crypto-asset market, key services such as providing liquidity and hedging risk are being carried out by exchanges and asset management platforms. WandX is establishing infrastructure for decentralized
+                                        creation, trade, and settlement of derivatives and financial products based on crypto-assets built on the Ethereum blockchain. WandX allows users to create combinations of cryptocurrencies (known as a Portfolio)
+                                        and trade the Portfolio by way of a single transaction. This helps customers reduce the risk of investing in volatile cryptocurrencies, as well as enables easy transaction between relatively low liquidity tokens.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Problem statement
+                                <ul class="no-dots">
+                                    <li>Some of the problems that the WandX platform aims to solve are:
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>How can users hedge risks that are inherent with cryptocurrencies?
+                                    </li>
+                                    <li>How can users invest in multiple cryptocurrencies with a single transaction?</li>
+                                    <li>How can users gain even if there is a fall in the price of a cryptocurrency?</li>
+                                    <li>How to increase the liquidity of volatile ERC20 tokens?</li>
+                                    <li>How can users create and trade digital assets (such as loyalty points) recorded on a blockchain?</li>
+                                </ul>
+                                <ul class="no-dots">
+                                    <li>Many of these problems are currently being solved by centralized cryptocurrency exchanges and crypto-asset management platforms. WandX would provide adecentralized solutionto these problems existing with crypto-assets/cryptocurrencies.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Solution
+                                <ul class="no-dots">
+                                    <li>WandX solves the above problems through providing tools to create, trade, settle financial instruments as well as allowing crypto-assets to be recorded on the blockchain.
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>Users can hedge risk inherent risks with cryptocurrencies by trading in portfolios of cryptocurrencies. Our initial product only allows trades in ERC20 tokens.
+                                    </li>
+                                    <li>By trading in a portfolio of cryptocurrencies, users can acquire multiple cryptocurrencies with a single transaction. Using our liquidate contract, users can transfer these cryptocurrencies into their account.</li>
+                                    <li>Shorting a stock in the traditional stock markets requires brokers to mediate the borrowing of the stock from someone willing to lend it. Shorting basically allows users to bet on the drop in price of the asset. This
+                                        can be done using escrow contracts, or by purchasing a put option on that particular cryptocurrency. The tools to write these options or creating these escrow contracts will be provided on WandX.</li>
+                                    <li>Creation of a portfolio of ERC20 tokens which also contain highly volatile ERC20 token prices increases the liquidity of these tokens due to easier availability of the tokens as well as better price discovery because
+                                        of a larger number of trades of that token.</li>
+                                    <li>WandX provides tools to create tokens that can be backed by a digital asset, and these tokens can be traded on our platform. We are experimenting with a larger number of trades happening off-chain, and only recording
+                                        of the trades happening on-chain.</li>
+                                </ul>
+                                <ul class="no-dots">
+                                    <li>(Our initial product is enabling users to trade in a portfolio of ERC20 tokens on the Ethereum blockchain, hence when portfolio of cryptocurrencies is referred to, it is actually ERC20 tokens. After our token sale we
+                                        will expand into products as detailed in our roadmap and whitepaper).
+                                    </li>
+                                    <li>(Crypto-asset and cryptocurrency is often inter-changed to represent our larger vision, which is to enable peer to peer creation, trade, and settlement of crypto-financial instruments).</li>
+                                    <li>Some of thefinancial instrumentsthat can be created on WandX are as follows:</li>
+                                    <li><strong>3.1 Portfolios of cryptocurrencies:</strong>
+                                        <ul class="left-mar">
+                                            <li>Financial products(First product released on WandX)- Combinations of cryptocurrencies can be created to enable people to invest in multiple cryptocurrencies with a single transaction. Users can create a basket
+                                                of cryptocurrencies (known as a portfolio); this basket has an associated price which is determined by the underlying cryptocurrencies in the basket and the prices of the cryptocurrencies. Creation, trade,
+                                                and settlement of this basket happens by way of smart contracts.</li>
+                                            <li>ETFs (Exchange traded funds)- Exchange traded funds are similar to mutual funds, but the shares in the fund can be traded on a secondary market. Imagine an exchange traded fund on the Ethereum blockchain, which
+                                                is a combination of say 15 different ERC20 tokens. You can directly buy a share in this ETF, or contribute to it through a creation unit. These shares can be traded in the secondary market, or liquidated
+                                                to get all the underlying coins.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>3.2 Derivatives</strong></li>
+                                    <li>The derivatives and financial products market is a multi-trillion dollar market around the world. WandX replicates the derivative market of the real world for the crypto-asset world. In the real world, OTC derivative
+                                        contracts are between two large parties while exchange traded derivatives are created, traded, and settled by a central party or on a centralized exchange. This centralized party creates the derivative contract/transaction
+                                        based on buyer and seller demand, matches buyer and seller, guarantees the trade, and takes a commission from buyer and seller. The central party eliminates the counterparty risk problem and partly mitigates the
+                                        information asymmetry problem inherent in trading. We believe that the Ethereum platform with its smart contracting capabilities can be used to create decentralized exchanges which can automate the creation, trade,
+                                        and settlement of these derivatives. Smart contracts at the backend defines margin accounts, the collateral posted by the parties, and enable decentralized trade and settlement of the derivative contract.
+                                        <ul>
+                                            <li><strong>OTC Derivatives (options, forward contracts):</strong>Similar to the manner in which OTC derivatives are created in the financial markets, they can be created on cryptocurrencies on WandX and settled
+                                                between the two parties using a smart contract. WandX enables the creation of vanilla forward contracts and exotic options derivatives.
+                                            </li>
+                                            <li><strong>Exchange traded derivatives (options and futures):</strong>WandX allows any person/entity to create decentralized exchanges and allow trade on these exchanges for derivative products. These exchanges
+                                                come with a front end to customize margin accounts, order book generation, types of orders, collateral and escrow accounts.
+                                            </li>
+                                            <li><strong>Derivatives (swaps):</strong>Interest rate swaps and currency swaps are used in conventional financial markets to hedge against volatility in interest rates and foreign exchange rates respectively. When
+                                                blockchain based applications become more mainstream, users would want to hedge the risks of volatility in crypto-asset values - e.g. swaps based on crypto-asset price movements could be created and traded,
+                                                either on an OTC basis or exchange traded on WandX.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>3.3 Securities</strong></li>
+                                    <li>If certain securities are generating good cash flows, and these are recorded on the blockchain, creation of an CABS (crypto Asset Backed Security) on top of these crypto-assets would bring about transparency in creation,
+                                        trading, settlement of the securities. The basic idea of creating an Asset Backed Security (ABS) is to bundle cash flow generating assets to lower risk. With the growth of IoT and blockchain, potentially any cash
+                                        flow generating asset with low risk can be bundled as a security which can create liquidity of any asset.</li>
+                                    <li>Asset backed securities- One of the objectives behind the creation of Asset Backed Securities (ABS) is to increase the liquidity of debt such as student loans, credit card receivables, and housing loans. These loans
+                                        are classified into certain categories (based on one or more specific attributes such as credit quality, tenure, geography, etc.), packaged into a “special purpose vehicle”, and fresh loans are raised by this SPV
+                                        on the strength of the cash flows underlying the packaged loans and supported by a suitable financial structure and credit rating. The interest and principal payments to the owners of the loans made to the SPV arise
+                                        from the interest and principal payments made by the borrowers of the debt instruments of the originating institutions (the student loans, credit card receivables, housing loans, etc. referred to above). With the
+                                        rise of p2p lending, a similar concept could be envisioned on the Ethereum blockchain with blockchain based crypto-assets serving as collateral.
+                                    </li>
+                                    <li><strong>3.4 Issue Crypto-assets</strong></li>
+                                    <li>WandX would enable a user to record his/her asset(s) on the blockchain through a user friendly front-end for creating tokens on Ethereum. These tokens would then represent ownership of the crypto-asset(s) which could
+                                        be transacted in one or more of the following ways:
+                                        <ul>
+                                            <li>Sold to crowdfund a future project (Artwork or whisky making)</li>
+                                            <li>posted as collateral for a peer to peer loan</li>
+                                            <li>packaged into a financial product with other risk bearing financial crypto-assets</li>
+                                        </ul>
+                                    </li>
+                                    <li>Such transactions, along with the decentralized exchange, could be used to create markets for any crypto-asset, as described in theapplications section.</li>
+                                    <li><strong>3.5 Other products</strong></li>
+                                    <li>WandX facilitates the creation of otherfinancial productssuch as Price variation swaps (similar to interest rate swaps), Insurance contracts and mutual funds, all on a single platform.
+                                        <ul>
+                                            <li><strong>Price variation swaps:</strong>If the price volatility of a particular cryptocurrency is higher than the risk appetites of users, two users on two different platforms might be willing to swap the price
+                                                risk with each other through a suitable contract on WandX, in a manner similar to interest rate swaps in conventional financial markets. exchange the price rise/fall risk with each other through a swap contract,
+                                                similar to interest rate swaps.</li>
+                                            <li><strong>Insurance on the asset:</strong>When you invest in a portfolio of crypto-assets, you can buy insurance on that portfolio through insurance contracts that can be created on WandX. This will guarantee
+                                                you a certain return even if the asset value were to go down.</li>
+                                            <li><strong>Tranching cash flows of a financial asset:</strong>Collateralized Debt Obligations (CDOs) are financial instruments that tranch the cash-flows underlying a given asset into bundles of different categories
+                                                of safety (from a default perspective) and are sold to investors with different risk appetites. For example, the AAA rated securities that are tranched would be supported by the surest quantum of cash-flows
+                                                i.e., they would stand first in a waterfall structure and would be sold to conservative investors, while BBB rated securities would stand lower in the waterfall structure and be sold to more risk seeking
+                                                investors. On WandX, investment vehicles such as mutual funds, asset combined products can be tranched with returns going to senior investors first, and then junior investors. This is similar to tranching
+                                                a CDO in the real world.</li>
+                                        </ul>
+                                    </li>
+                                    <li>In conventional financial markets, such derivative instruments are created by institutions to increase liquidity, hedge risk, and of course for speculation. WandX aims to put these real world products on the Ethereum
+                                        blockchain, with the added advantage of complete transparency, and little restriction as to who can create or trade these products.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Identity
+                                <ul class="no-dots">
+                                    <li>Although anonymity or pseudonymity is welcome in certain cases, in the WandX business model it would benefit the network as well as the users to reveal their identities or parts of their identities. This would be done
+                                        through integration with identitification and KYC platforms on a blockchain such as uPort. Although the blockchain allows for pure peer to peer lending and trade, in the real world banks do play an important role
+                                        in growing the economy by solving the information asymmetry problem, though it's a centralized party. WandX enables solving the information asymmetry problem using the transparency of the blockchain, but still retaining
+                                        the business model and working economics of creating liquidity in the cryptocurrency world.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Technology
+                                <ul class="no-dots">
+                                    <li>From a technology standpoint, WandX is built on the Ethereum blockchain because of its smart contracting capabilities, large network of miners and users, and a large number of tokens already having been issued on Ethereum.
+                                        Our initial product will be based on creation of derivatives on ERC20 tokens on Ethereum. We have six types of contracts - Data storage (d-gen), functionality enabler (f-gen), trade enabler (t-gen), settlement enabler
+                                        (s-gen), rating enabler (r-gen), analytics enabler (a-gen). Together they create a holistic ecosystem to create, trade, view, and settle contracts. Issuers create the financial instruments, market makers and buyers
+                                        purchase these instruments, sellers close the loop and thus all the players together create the market for the instrument. As mentioned before, these instruments can be derivatives (OTC and exchange traded), ETFs,
+                                        or other crypto-assets recorded on the blockchain. Using the f-gen, the issuer creates the product, the d-gen stores the product, the t-gen and s-gen are responsible for decentralized trade of the product through
+                                        smart contracts. The r-gen is optional, and can be used only by certain users to rate products.
+                                    </li>
+                                    <div class="paper-img-holder">
+                                        <img src="./images/platform_architecture.png" alt="">
+                                        <p>Figure 1. WandX platform architecture</p>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li> Incentivization
+                                <ul class="no-dots">
+                                    <li>Users of each of the gen modules are incentivized to contribute to the platform. Incentives of different players on the WandX platform are slightly different depending on the value they bring to the platform. All the
+                                        incentives are distributed using the Wand token which is based on Ether. The underlying value of this Dapp will be in its applications to create, trade and settle financial products based on blockchain recorded
+                                        crypto-assets. The Token sale will distribute the Wand tokens among the public, after which bounty programs will be conducted to incentivize each player in the platform - buyers, sellers, issuers, raters, developers,
+                                        and market makers.
+                                    </li>
+                                    <li><strong>Market maker</strong>
+                                        <ul class="left-mar">
+                                            <li>Market makers are marketing partners. Their role is a combination of acting as an issuer and as a seller. They create a market for products that they think will sell based on their real world experience in various
+                                                industries. For example, if they think that a certain portfolio of five cryptocurrencies has shown good returns in the past two years, they would create and trade this portfolio on WandX. They would receive
+                                                Wand for its creation, and they can specify their trading fees when they sell the portfolio.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Developers</strong>
+                                        <ul class="left-mar">
+                                            <li>Benevolent developers are always welcome! Developers can greatly contribute to the Beta version of the platform by identifying bugs and suggesting features, and better yet creating and pushing the fix.</li>
+                                            <li>Hackathons: Virtual hackathons will be held once during the Beta phase.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Issuer</strong>
+                                        <ul class="left-mar">
+                                            <li>Issuers are basically creators of the financial products. For instance, they could create an ABS, an ETF or an exchange. Issuers and market makers constitute the supply side for the products.</li>
+                                            <li>Creating ABS and derivatives is a complex process, hence issuers can charge a fee as a standard fee for sellers to use their product or a transaction based fee for every trade that occurs on their product.</li>
+                                            <li>Margining and collateral: While creating futures contracts on an exchange, issuers can specify margin and collateral requirements. They will create a market for a particular futures contract, thereby allowing
+                                                users to create contracts on the increase or decrease in the price of an crypto-asset.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Sellers</strong>
+                                        <ul class="left-mar">
+                                            <li>Using the d-gen, f-gen, and the t-gen, sellers will enhance the liquidity of the various products as well as taking on counterparty risk involved in futures transactions where there is cash settlement.</li>
+                                            <li>Sellers are the other side of a derivatives contract, and help price discovery of an option or future.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Buyers</strong>
+                                        <ul class="left-mar">
+                                            <li>Buyers will use the t-gen to trade in the products given below.</li>
+                                            <li>Securities: To minimise risk or as investments. These securities could be combinations of different cryptocurrencies, or cryptocurrencies + real world assets recorded on the blockchain. These securities would
+                                                be created using f-gen and d-gen.</li>
+                                            <li>Futures and options: These derivatives on crypto-assets can be traded on exchanges built on WandX.</li>
+                                            <li>Forward contracts: Two parties could create a bilateral forward contract whose settlement would be done by the s-gen automatically. This is an escrow contract which is executed by the EVM.</li>
+                                        </ul>
+                                    </li>
+                                    <li>A month after our Token launch, we will introduce bounties for each player in the platform, and for each type of product that can be created.</li>
+                                    <div class="paper-img-holder">
+                                        <img src="./images/modules.jpg" alt="">
+                                        <p>Figure 2. WandX platform users and modules</p>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>Governance
+                                <ul class="no-dots">
+                                    <li>The point of creating this system of decentralized cryptocurrency contract settlement on the blockchain is to allow the system to develop trust among the different players. However, adherence to derivative contracts
+                                        can be further enforced using standardized escrow accounts available on the platform. Market makers can also create escrow contracts using f-gen. These escrow contracts can be created for a fee by the market makers.
+                                        Since this platform is developed on the Ethereum blockchain, the single source of truth of the creation, trade and settlement of the products is based on the blockchain. Any asset that is used to create products
+                                        has to be recorded on a blockchain, whether it is a real world asset or another token. The f-gen allows to call properties of other assets such as: proof of existence, price, quantity. Integrations of uPort and
+                                        other identity platforms will serve to increase trust in the system.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Timeline
+                                <ul class="no-dots">
+                                    <li>
+                                        <div class="paper-img-holder">
+                                            <img src="./images/newroadmap.png" alt="">
+                                            <p>Figure 3. Roadmap of WandX development and feature addition for the next 6 months.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Competitor landscape
+                                <ul class="no-dots">
+                                    <li><strong>Decentralized exchanges:</strong>0x project, Etherdelta</li>
+                                    <li><strong>Centralized exchanges:</strong>Kraken, Coinbase, Shapeshift</li>
+                                    <li><strong>Centralized derivatives trading:</strong>Kraken, Poloniex, Prism (by shapeshift)</li>
+                                    <li><strong>Decentralized derivatives trading:</strong>Dcorp (Not released as per the time of writing this), EtherOpt (Beta)</li>
+                                    <li>Our biggest differentiator is that we are creating the entire infrastructure for decentralized creation, trade, and settlement of any financial instrument. OTC products can be traded between users using escrow mechanisms,
+                                        exchange traded products can be traded through the ability to create decentralized exchanges on WandX, with every exchange’s reputation depending on the number of trades that they settle without default. Portfolio
+                                        managers can create ETFs, mutual funds, or portfolios of cryptocurrencies and define the rules for trading these products. Real world assets such as loyalty points can be traded on WandX; the WandX team is working
+                                        on launching pilots in these industries. WandX allows the ecosystem to run based on purely supply and demand, with buyers, market makers, sellers determining the prices and issuers creating the products. There are
+                                        no automated market makers or price discovery mechanisms, it is an open market to the gamut of users who would participate and benefit from this decentralized platform.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Technology integrations
+                                <ul class="no-dots">
+                                    <li><strong>10.1 Data from other blockchains and oracles</strong></li>
+                                    <li>Using applications such as Oraclize, Streamr, IPFS we are creating the backend for d-gen and f-gen to be able to connect and retrieve information from other blockchains as well as different web APIs. The users can use
+                                        these third party applications to retrieve data which acts as an impartial oracle, which is required when blockchains have to interact with data on the web. These features would release on WandX 2.0.
+                                    </li>
+                                    <li><strong>10.2 IoT</strong></li>
+                                    <li>In the not so distant future, we shall see machines interacting with each other through blockchains. We’re building with this future in mind. When financial products such as an ABS can be created with machines serving
+                                        as the Assets, then it could greatly broaden financing options. Machine to machine trade in derivatives would be a more complex interaction, but with rapid development of AI, this is also not very far away.</li>
+                                    <li><strong>10.3 Other platforms</strong></li>
+                                    <li>After the release of WandX 1.0, we are going to add an API which could possibly be used in platforms such as Gnosis. To verify identity of the different players, we plan integration with identity verification systems
+                                        such as uPort. This identity could be used to verify users’ credentials, credit scores, credit history and to minimise potential loss due to default through escrow contracts.
+                                    </li>
+                                    <li><strong>10.4 Analytics engines</strong></li>
+                                    <li>We are working on integrating analytics tools such as R. This could be used to generate statistical models on the financial products similar to how these products are created in the real world by banks.</li>
+                                    <div class="paper-img-holder">
+                                        <img src="./images/analytics1.jpg" alt="">
+                                        <p>Figure 4. Different technology integrations into WandX.</p>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>Legal considerations
+                                <ul class="no-dots">
+                                    <li>The legal considerations of using the WandX platform is tied to the regulations around cryptocurrencies in your respective countries. Please read our terms of use, privacy policy, KYC and AML requirements before using
+                                        the WandX application.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Development Roadmap
+                                <ul class="left-mar">
+                                    <li><strong>Pilot:</strong>Create, trade, and settle a portfolio of cryptocurrencies. For example, you could create a portfolio of five ERC20 tokens in a given proportion. This portfolio can be traded with buyers who don’t
+                                        want to go into the trouble of buying five separate cryptocurrencies. A trading fee and a creation fee can be specified at the time of creation. The buyer can then choose to liquidate his portfolio and get the underlying
+                                        cryptoccurrencies into his wallet.
+                                    </li>
+                                    <li><strong>Beta:</strong>We will release our Beta by 16th September onto the Ethereum blockchain.</li>
+                                    <li><strong>Token sale:</strong>We are launching our Token sale on 22th October. Further details are available in the Token sale section of the Whitepaper.</li>
+                                    <li><strong>WandX 1.0:</strong>WandX 1.0 will go live on the Ethereum mainnet on 2nd November.</li>
+                                    <li><strong>Market making:</strong>As part of WandX 1.0, we will be launching a market making guide as well as initiate our WandX 1.0 team of market makers to get the ball rolling.</li>
+                                    <li><strong>Pilot across industries:</strong>We aim to be a truly decentralized platform for the derivatives market in the crypto world. However, we see the advantages in running partly as a traditional business as well,
+                                        and hence we will have a marketing team and a budget allotted to marketing to help bring companies in this industry onto our platform. We believe in building great products, but also in creating trustworthy brands.
+                                        We plan to pilot our platform on a private Ethereum network in the telecom sector and carbon credit trading sector. For applications in industries ashighlighted here, we will create a private network whose transactions
+                                        will be pegged to the main-net to reduce transaction time and transaction costs.
+                                    </li>
+                                    <li><strong>OTC derivatives:</strong>In November, we will launch the OTC traded derivatives market on WandX.</li>
+                                    <li><strong>Exchange traded derivatives:</strong>In December, we will launch the futures and options module on WandX, which would allow users to trade in both derivatives on either financial products or crypto-assets.</li>
+                                    <li><strong>ETFs:</strong>Creation of decentralized ETFs with user roles for fund managers and investors will be released on the end of december.</li>
+                                    <li><strong>WandX 2.0:</strong>This releases in Jan 2018. WandX 2.0 will be the platform to create and trade any financial instrument on ERC20 tokens.</li>
+                                </ul>
+                            </li>
+                            <li>Marketing and sales strategy
+                                <ul class="no-dots">
+                                    <li>Our strategy is aimed toward onboarding our gamut of user types. We want our users to use our platform as an investment tool, as a method to create crypto-assets, and to hedge risks arising from crypto-asset price movements.
+                                        In any case, we would want both blockchain savvy users as well as people who aren’t familiar with the blockchain ecosystem.
+                                    </li>
+                                    <li><strong>13.1 Online strategy</strong>
+                                        <ul class="left-mar">
+                                            <li><strong>Ads:</strong>Google and Facebook ads directed toward non-blockchain savvy users.</li>
+                                            <li><strong>Social media:</strong>Use social media (Reddit, Twitter, Facebook) to spread the word.</li>
+                                            <li><strong>Other media:</strong>Use medium, Blogs, Youtube videos, Github, our Slack channel, Reddit to inform users about our updates and new features.</li>
+                                            <li><strong>Videos:</strong>Create Youtube videos for instructions on how to use our platform.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>13.2 Offline strategy</strong>
+                                        <ul class="left-mar">
+                                            <li><strong>Exchange Partners:</strong>Partner with exchanges to make it easy for fast onboarding of non-blockchain savvy users.</li>
+                                            <li>
+                                                <srong>Industry Partners:</srong>Partner with industry experts, fintech startups who can use WandX to improve efficiencies in their processes. This would be to integrate off-chain transactions with on-chain settlement.</li>
+                                            <li><strong>Use cases:</strong>Create pilot programs ofuse cases.</li>
+                                            <li><strong>Sale bounty:</strong>Give out bounties for those who are willing to be our sales partners to identify and engage with potential clients.</li>
+                                            <li><strong>Advisors:</strong>We have a large team of advisors in the fields of statistics, data analytics, financial markets, and industry wise experts.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Token sale
+                                <ul class="no-dots">
+                                    <li>We are launching the Wand token through an Token sale on 22nd October. The Wand token will be used in the WandX platform for transacting with any of the WandX APIs. The first WandX API will be theOlio portfolio trading
+                                        application.This application allows users to create and trade in a portfolio of ERC20 tokens. The latest details of our token auction page will be updated onour site. We strongly suggest users to closely read the
+                                        Terms and Conditions before accepting it. Only after accepting the T&#x26;C can users buy Wand.</li>
+                                    <li><strong>14.1 Why launch a new token instead of just using Ether?</strong>
+                                        <ul class="left-mar">
+                                            <li><strong>Governance:</strong>Governance over updates to the software which is separate from the Ethereum ecosystem.</li>
+                                            <li><strong>Incentives:</strong>Incentive programs for various users, bounties for bug identification, and promoting the use of all the modules of our platform.</li>
+                                            <li><strong>Future development:</strong>If we decide to integrate the tokens created on other blockchains as well (such as Tezos, NEO), we would need to be able to introduce protocols such as the COMIT protocol
+                                                for interaction between the blockchains. It would be more secure and more efficient to do this if we have our own token.</li>
+                                            <li><strong>Derivatives contracts:</strong>Collateral and margin can be posted in terms of a common cryptocurrency whose movement is not directly dependent on Ether.</li>
+                                            <li><strong>Developing the WandX protocol:</strong>The Wand token will be used to access any application on the WandX platform. The functionality in all applications is enabled by APIs. When external applications
+                                                use any of the WandX APIs, they will be charged a certain fee in Wand; to use any of the applications on WandX, users will have to transact using Wand.</li>
+                                            <li><strong>Use cases:</strong>To pilot the WandX protocol in the use cases mentionedhere.</li>
+                                            <li><strong>Fund raising from users:</strong>The uniqueness of a Token sale is that it allows you to raise funds directly from the potential users of your platform. Along with the funds, we also want to get a diverse
+                                                set of users, hence we have capped the Token sale at 100ETH per user.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>14.2. Rules for the Token sale</strong>
+                                        <ol>
+                                            <li>A total of 72,000,000 tokens will be created by the WandX team. For the Token sale, 48,000,000 will be distributed, with the founding team retaining the rest of the tokens. The remaining 24,000,000 will be used
+                                                for a Seasonal Token offering before the release of WandX 2.0.</li>
+                                            <li>There will be a cap of 100 ether per user and a gas limit of 200,000. Users can participate using Metamask, Parity, or Mist wallets. After the Token sale, we will integrate Civic and uPort as identity management.</li>
+                                            <li>We aim to raise 12500ETH (ether) over a period of 1 month. We will end the crowdsale either when the 12500ETH is raised or when 1 month is up, whichever comes first.</li>
+                                            <li>Users can send ether to our contract address which will be displayed 2 hours before the start of the Token sale. Ether must be sent through MyEtherWallet, Mist, Parity or Metamask. Do not send ether through
+                                                exchanges such as Jaxx, Kraken or others as your ether may be stolen.</li>
+                                            <li>The funds raised during the Token sale will be used for hiring, operation costs, as a reserve for buyback, and for portfolio creation.</li>
+                                            <li>Start date - October 22nd 2pm GMT; End date - November 22nd 7:30pm GMT.</li>
+                                            <li>Tokens accepted - ETH, and any of the top 10 ERC20 tokens as of October 21st 2pm GMT.</li>
+                                        </ol>
+                                    </li>
+                                    <li>Launching a decentralized application as the product of a company does not create true decentralization, hence we are also creating our employees’ salaries and benefits payments through a smart contract. Employees will
+                                        be incentivised to perform their role in the company since their incentives, payments will occur using ether and later using Wand. The only centralization will be the company registration and the shareholder agreements.
+                                        We will also look at how we can take decisions on features, bug fixes through a voting system from all users.</li>
+                                    <div class="paper-img-holder">
+                                        <img src="./images/tokensaleUpdated.png" alt="">
+                                        <p>Figure 5. Description of how the ether received during the Token sale will be used</p>
+                                    </div>
+                                    <li><strong>14.3. Pre-Token sale</strong></li>
+                                    <li><strong>14.3.1Why launch a pre-Token sale?</strong>
+                                        <ul class="left-mar">
+                                            <li>Gauge market sentiment — We would like to gauge market sentiment for a decentralized portfolio trading application such as ours.</li>
+                                            <li>Marketing — In the six weeks till the end of our Token sale, we want to step up our PR and marketing campaign for our platform.</li>
+                                            <li>Fast track mainnet release — We would like to release WandX onto the mainnet soon after our token sale, hence we will use part of the funds to stress test our portfolio trading application APIs.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>14.3.2Time:</strong>
+                                        <ul class="left-mar">
+                                            <li>Start date and time — October 9th 2pm GMT.</li>
+                                            <li>End date and time — October 12th 7:30pm GMT.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>14.3.3Tokens:</strong>
+                                        <ul class="left-mar">
+                                            <li>5.2% of the total supply of Wand will be available for the Pre-Token sale.</li>
+                                            <li>Pre-Token sale + Token sale = 12500ETH.</li>
+                                            <li>Pre-Token sale = 500ETH.</li>
+                                            <li>Total Supply = 72 million Wand.</li>
+                                            <li>Supply offered for the pre-Token sale + Token sale = 48 million Wand.</li>
+                                            <li>Supply offered for the Token sale = 45504000.</li>
+                                            <li>Supply offered for the pre-Token sale = 2496000.</li>
+                                            <li>Tokens accepted for the pre-Token sale = ETH.</li>
+                                            <li>Minimum Ether required to participate in the Pre-Token sale = 1ETH.</li>
+                                            <li>Remaining Supply after pre-Token sale + Token sale = 24 million Wand.</li>
+                                        </ul>
+                                    </li>
+                                    <li>This remaining 24 million Wand supply will be offered as a Seasonal Token Offering during the release of WandX 2.0.</li>
+                                    <li><strong>14.3.4 Value of the Wand token and bonus offered:</strong>
+                                        <ul class="left-mar">
+                                            <li>A 30% bonus will be given to users who participate in the pre-Token sale.</li>
+                                            <li>Token sale = 3792Wand per ETH.</li>
+                                            <li>Pre-Token sale = 4992Wand per ETH (30% bonus).</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>14.3.5How to participate:</strong></li>
+                                    <li>Send your Ether only through MyEtherWallet or Mist Wallet or Parity Wallet to the address mentioned on the Token sale page at 2pm GMT on October 8th. Do not send Ether through exchanges such as Poloniex or through wallets
+                                        such as the Jaxx wallet, since your ether could be misplaced.</li>
+                                    <li>Please read the terms and conditions before participating in our pre-Token sale and our Token sale.</li>
+                                    <li><strong>15.2 WandX protocol and the Wand token</strong></li>
+                                    <li>The Wand tokens are not only Dapp tokens for utility in the WandX application; they are tokens to incentivize the development of the WandX protocol for decentralized financial markets. The Ethereum blockchain protocol
+                                        token (which is Ether) allows users to use Ether in the Ethereum world computer; the filecoin/storj/sia protocol token allows users to use tokens for file storage; the WandX protocol token ensures clearing of financial
+                                        contracts. The Wand token incentivizes users to clear contracts, rate products, rate exchanges/markets, create exchanges/markets. These financial contracts could be futures, options, swaps, ETFs, or any number offinancial
+                                        productsthat are used to cater to users with different reward/risk appetites. Hence each of the modules at WandX are in the form of an API, both for security reasons as well as to enable users to clear contracts
+                                        on other platforms using our APIs. The WandX protocol token is a means to an end - create decentralized financial markets for any financial instrument/product.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>System architecture
+                                <ul class="no-dots">
+                                    <li><strong>15.1 Core platform</strong>
+                                        <ol class="left-mar">
+                                            <li><strong>Data storage:</strong>Data on all trades conducted will be stored on the IPFS/Swarm. However, our pilot will be designed to store data in our servers. This pilot is to verify contract creation, trade
+                                                and settlement. The next pilot will verify data storage, retrieval and pushing data back to the IPFS/Swarm.</li>
+                                            <li><strong>Methods:</strong>Products, derivatives, and ETFs on ERC20 tokens will be available as well as the ability to record current crypto-assets on the Ethereum blockchain. Users can create, trade, settle these
+                                                products using the front-end, which connects to our smart contract architecture.</li>
+                                            <li><strong>Permissions:</strong>users can set permissions on the contracts that they create; they may want only users in certain regions to trade in the contract, or users with only a certain credit history and
+                                                credit score. Permissions helps build an additional layer of trust in the system.</li>
+                                            <li><strong>Contract creators:</strong>These are functionalities provided to the users to create their products. These directly link to smart contracts at the backend, hence any product that the user creates is
+                                                in essence a smart contract on the Ethereum blockchain.</li>
+                                            <li><strong>Connecting to other platforms:</strong>We will eventually provide APIs to retrieve data from our platform for use in markets such as Gnosis. We would also integrate crypto-assets recorded on other blockchains
+                                                through protocols such as the COMIT protocol, but this would only happen after the release of WandX 2.0 since we are experimenting with the stability of such protocols for mainstream use.</li>
+                                            <li><strong>Off-chain capabilities:</strong>We are working on technology to create most transactions off-chain in order to prevent clogging of the Ethereum network. In the real world trades of financial products
+                                                happens in microseconds, which we can enable either through pegged blockchains, lightning networks, or state channels through integration of socket.io and Whisper.</li>
+                                            <div class="paper-img-holder">
+                                                <img src="./images/fed.jpg" alt="">
+                                                <p>Figure 6. Front end design of WandX</p>
+                                            </div>
+                                        </ol>
+                                    </li>
+                                    <li><strong>15.2 WandX Beta (Olio portfolio trading application)</strong></li>
+                                    <li>Our Beta product enables users to trade in a portfolio of ERC20 tokens on Ethereum. There are three main features of Olio - Create portfolio, buy a portfolio, sell a portfolio. The basic principles in designing Olio
+                                        is to keep all transactions on-chain while all other computations and non-token transfer transactions off-chain.</li>
+                                    <li><strong>15.2.1 WandX-Olio API</strong></li>
+                                    <li>In order to realise the creation of the WandX protocol for decentralized financial markets, starting with the Olio portfolio trading application we are creating APIs for all future Dapps on WandX. Each API will contain
+                                        all functionality available on the Dapp, and the API will act as a bridge between the front-end Dapp and the Ethereum smart contracts. In addition to the protocol, the API would add a security layer for the platform
+                                        as well as an additional business model for external API calls.</li>
+                                    <div class="paper-img-holder">
+                                        <img src="./images/olio1.png" alt="">
+                                        <p>Figure 7. WandX-Olio architecture</p>
+                                    </div>
+                                    <li><strong>15.2.2 Create portfolio</strong></li>
+                                    <li>Users can create a basket of ERC20 tokens (known as a portfolio from now on) which can then be traded with other users. For our Beta product, we will enable creation of portfolios from the top 20 ERC20 tokens. Users
+                                        can select a maximum of 7 tokens in the portfolio, and select the percentages of each ERC20 token in the portfolio. If the user has the coins in his wallet, the portfolio is immediately created. If the user doesn't,
+                                        then the user is redirected to an exchange.</li>
+                                    <li><strong>15.2.3 Buy portfolio</strong></li>
+                                    <li>Users can quote bid prices for portfolios that they want to own. For the first two weeks, users can quote prices in Ether, and then they can quote prices in only Wand tokens. All bids have an expiry date and time; when
+                                        sellers accept a bid, the portfolio along with the underlying coins is transferred to the buyer and the seller gets Ether.</li>
+                                    <li><strong>15.2.4 Sell portfolio</strong></li>
+                                    <li>Users who own a portfolio can quote an ask price when they want to sell it. For the first two weeks they would quote in Ether, and from then on they would quote in Wand. When a buyer accepts the ask price, the portfolio
+                                        is transferred and Ether/Wand is transferred to the seller. If the seller wants to liquidate the portfolio and get the underlying coins, he activates the liquidate contract through the Dapp and the Wand-Olio API,
+                                        after which they get the underlying coins into their address.</li>
+                                    <li><strong>15.2.5 On-chain</strong></li>
+                                    <li>All transactions that happen on-chain are through the WandX-Olio API. The API integrates the Dapp with the smart contracts, hence improving security of the platform and providing an additional business model for future
+                                        use of the APIs.</li>
+                                    <li><strong>Creating portfolios:</strong>creation of portfolios by users is done through the WandX-Olio API.</li>
+                                    <li><strong>Buy/sell portfolios:</strong>Accepting Bid and Ask prices calls functions from the API which execute the smart contract code.</li>
+                                    <li><strong>Liquidate portfolios:</strong>Liquidation is the process of getting the underlying coins into your address. This event again calls the smart contract through the Olio API.</li>
+                                    <li><strong>Recording changes in the order book:</strong>Any change in ownership of a portfolio is also recorded on our order book contract.</li>
+                                    <li><strong>Use of WandX Token sale revenue:</strong>The revenue gained from the WandX Token sale will be used as mentioned on ourtoken auction page. Addresses are assigned for operational costs, hiring, buyback, and portfolio
+                                        creation. Users can see how the revenue is used by seeing the consumption of tokens in each of these addresses.</li>
+                                    <li><strong>15.2.6 Off-chain</strong></li>
+                                    <li><strong>Order book listing:</strong>Listing the portfolios available to buy/sell will be done off-chain. Keeping the list on-chain would be very expensive because of gas costs due to change in contract state.</li>
+                                    <li><strong>Bid/Ask quotes:</strong>Listing of bid/ask quotes is done off-chain, with only the accepted quote being moved to the blockchain through the API+smart contract.</li>
+                                    <div class="paper-img-holder">
+                                        <img src="./images/import.png" alt="">
+                                        <p>Figure 8. Features of the WandX Beta release.</p>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>Risk and compliance
+                                <ol class="left-mar norm-font">
+                                    <li><strong>Token sale:</strong>The ETH address to which you will have to send your ETH during the token sale will be revealed 24 hours before the token sale.</li>
+                                    <li><strong>Terms and conditions:</strong>Before participating in our Dapp or token sale, users will have to accept the terms and conditions and privacy policy of our platform.</li>
+                                </ol>
+                            </li>
+                            <li>Advantages of WandX
+                                <ol class="left-mar norm-font">
+                                    <li><strong>Futures contracts:</strong>There’s no middleman to guarantee the obligation of futures contracts; this process is automated by the backend smart contracts. WandX provides ease of creation of contracts by anyone,
+                                        and anyone can trade. This would help in providing more liquidity to the contracts and the tradeability of tokens. Margin accounts and escrow accounts are managed using our smart contracts and APIs.</li>
+                                    <li><strong>Options:</strong>Issuer/writer, rater of the option, buyer, seller all on one platform which provides that single source of truth to all trades. This also increases liquidity of the options created.</li>
+                                    <li><strong>Cryptocurrency and blockchain based products:</strong>Create, sell, buy, rate cryptocurrency based products like AUG+GNO+BNT = product 1. This product 1 invests in all three cryptourrencies to reduce risk of
+                                        any single cryptocurrency. One person creates this product, another buys, rating happens automatically and is also rated by a third party who gets token incentive to rate it. Create crypto mutual funds and ETFs
+                                        which invest in certain blockchain based products with the payouts and buy-ins for the mutual fund defined by the contract.</li>
+                                    <li><strong>Identity management:</strong>Accounts will be linked with uPort and other identity management software to guarantee your credit worthiness and your trust factor. If the person does not adhere to a futures or
+                                        forward contract, that information will be available to the entire network, and they will cease to trade with that person.</li>
+                                    <li><strong>Liquidity:</strong>Currently liquidity in trading derivatives is left to brokers, banks, exchanges. The use of the blockchain is not only providing a single source of truth, but also enabling the liquidity of
+                                        the products in the market. Matching buyer and seller, settlement, dispute settlement is all done by the blockchain and the smart contract code. Contracts can be created to provide indices to crypto markets to signal
+                                        movement in the market and make the fluctuations of the market more predictable.</li>
+                                    <li><strong>Integration with IoT (optional):</strong>Confirmation of delivery of the products in the case of futures or forward contracts is done by both parties. An IoT sensor could be attached to the goods to additionally
+                                        verify the validity of the transaction, which would connect with the blockchain.</li>
+                                </ol>
+                            </li>
+                            <li>Applications of the WandX platform
+                                <ul class="no-dots">
+                                    <li><strong>Financial products</strong></li>
+                                    <li>Open market for creation, trade and settlement of derivatives and other financial products on crypto-assets.</li>
+                                    <li><strong>Investments</strong></li>
+                                    <li>WandX opens out the crypto-investing using various instruments.
+                                        <ul class="left-mar">
+                                            <li>Futures markets on cryptocurrencies can be used to hedge risk for people who make large trades in crypto-assets, or to hedge risk on high price volatility. This adds another layer of price determination of crypto-assets.</li>
+                                            <li>Combinations of cryptocurrencies can be created, bought, traded to minimise risk. You can look atfigure 1to see how this can be done.</li>
+                                            <li>Buy options on cryptocurrencies to invest with less capital</li>
+                                            <li>Suppose you want to buy a car to drive as a taxi. What you would do now is to go the bank, get a car loan, pay the car showroom for the car and start your taxi business. The disadvantage here is the high interest
+                                                rates that you have to pay. As an alternative scenario, what you could do is sell a “Taxi contract” where you can specify the cost of the taxi, current cost of fuel, your take home salary, counterparty who
+                                                would own the taxi in the case that you quit the job. Based on this information, you and the taxi are a cash flow generating asset with underlying security being the taxi. People can invest in this asset
+                                                for the entire life of the taxi. SImilarly, various products can be created which can power the economy.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Industries</strong>
+                                        <ul class="left-mar">
+                                            <li><strong>Energy markets:</strong> Carbon credit trades, escrow contracts, Carbon based financial products can be created, traded, and settled with transparency</li>
+                                            <li><strong>Agriculture:</strong> Futures contracts, forward contracts, commodity options, vehicle for investment in agricultural infrastructure are just some of the applications of WandX in the agriculture space.</li>
+                                            <li><strong>Goods trade: </strong>Peer to peer trade across regions requires middlemen to validate the trades and create escrow contracts, insurance to mitigate counterparty risk, currency swaps to mitigate currency
+                                                fluctuations. Products can be created for countering risk at every stage, hence allowing peer to peer trade without any middlemen.</li>
+                                            <li><strong>Digitizing illiquid assets:</strong> Assets that are standard, universally recognized, bought by many people, are the kind that can be traded on a blockchain. For example, plastic recycling is a very
+                                                immature industry in India, China, and Indonesia inspite of these countries producing the largest amount of plastic waste. A market could be created for trading in standard recyclable plastic such as plastic
+                                                bottles on WandX. This article explores this idea and describes how such a system could work.
+                                            </li>
+                                            <li><strong>ABS: </strong>WandX allows users to create crypto-asset backed securities on any crypto-asset stored on the blockchain. We see a large market in creating an ABS for the wine and whisky industry, as well
+                                                as published artwork.</li>
+                                            <li><strong>Machine-human contracts:</strong>Integration of IoT and blockchain requires machine-machine and human-machine interactions. Just like derivatives such as futures have made life easier for agriculture
+                                                producers and traders, securities built on the human-machine and machine-machine interactions can open up the financial system for these interactions.</li>
+                                            <li><strong>Cross border microfinancing:</strong>Microfinance institutions have high costs associated with collecting money and interest for their loans. Escrow contracts could be created which could possibly bring
+                                                the microfinance institution and its collection scheme into the blockchain. Thisarticleexplores this idea further.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong></strong></li>
+
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer_wapper">
+                <div class="container">
+                    <div class="row nomarg">
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>About Us</li>
+                                <li><a href="#" target="_blank">Whitepaper</a></li>
+                                <li class="copyright">Copyright © 2018 Wandx</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Legal</li>
+                                <li><a href="terms-of-use.html" target="_blank">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Trading</li>
+                                <li><a href="https://github.com/WandXDapp" target="_blank">Smart Contracts</a></li>
+                                <li><a href="fees.html" target="_blank">Fees</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Contact Us</li>
+                                <li>support@wandx.co</li>
+                                <li>business@wandx.co</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <li>Social</li>
+                                <li class="social-network">
+                                    <a href="https://medium.com/wandx" target="_blank"><i class="fab fa-medium-m"></i></a>
+                                    <a href="https://github.com/WandXDapp" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://twitter.com/WandXDapp" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/wandx.co/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://t.me/wandxbeta" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                                    <a href="https://www.instagram.com/wandx.co/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script data-react-helmet="true" type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "wandx",
+            "alternateName": "wandx ERC20 token trading",
+            "url": "https://www.wandx.co",
+            "potentialAction": {}
+        }
+    </script>
+    <script data-react-helmet="true" type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "wandx PTE Ltd.",
+            "url": "https://wandx.co",
+            "sameAs": [
+                "https://www.facebook.com/wandx.co/",
+                "https://twitter.com/WandXDapp",
+                " https://www.youtube.com/channel/UCqCYHqV59VklhyEMJgZGFDA",
+                "https://www.instagram.com/wandx.co/",
+                "http://plus.google.com/",
+                "https://in.linkedin.com/company/chainflux"
+            ],
+            "logo": "https://www.wandx.co/images/wandx.png"
+        }
+    </script>
+    <script>
+        $(function() {
+            var curr_year = (new Date()).getFullYear();
+            $('#copyright-year').text(curr_year)
+            $('.navbar-menu li').click(function(e) {
+                e.preventDefault();
+                $(document).off("scroll");
+                $('.navbar-menu li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $(document).on('click', '[data-video]', function(e) {
+                $(this).parent('.embed-responsive').css('height', $(this).parent('.embed-responsive').height());
+                $(this).parent('.embed-responsive').css('width', $(this).parent('.embed-responsive').width());
+                e.preventDefault();
+                var thisUrl = $(this).data('video');
+                var youtubeUrl = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + thisUrl + '?autoplay=1&loop=0&showinfo=0&theme=light&color=red&controls=1&modestbranding=0&start=0&fs=1&iv_load_policy=3&wmode=transparent&rel=0" allowfullscreen></iframe>';
+                $(this).parent('.embed-responsive').html(youtubeUrl);
+            });
+
+
+            $.fn.smoothScroll = function(options) {
+
+                return this.each(function() {
+                    $(this).bind('click', function(e) {
+                        e.preventDefault();
+
+                        var $href = 'body';
+                        if ($(this).data('target')) {
+                            $href = $(this).data('target');
+                        } else if ($(this).attr('href')) {
+                            $href = $(this).attr('href');
+                        } else {
+                            $href = 'body';
+                        }
+
+                        // Default options.
+                        var settings = $.extend({
+                            fromTop: 0,
+                            speed: 1000,
+                            easing: 'swing'
+                        }, options);
+
+                        if ($($href).length == 0) {
+                            console.log('taget ' + $href + ' not exists');
+                        } else {
+                            $('html, body').stop().animate({
+                                scrollTop: $($href).offset().top - settings.fromTop
+                            }, settings.speed, settings.easing);
+                        }
+
+                    });
+
+                });
+            };
+
+            $('.nav_menu > li > a[href^="#"]').smoothScroll({
+                fromTop: ($(window).width() > 786) ? 123 : 70
+            });
+
+            $(window).on('scroll', function() {
+                $('.target-section').each(function() {
+                    if ($(window).scrollTop() >= $(this).position().top) {
+                        var id = $(this).attr('id');
+                        if (id == 'about') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#about"]').addClass('active');
+                        }
+                        if (id == 'how-it-works') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#how-it-works"]').addClass('active');
+                        }
+                        if (id == 'roadmap') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#roadmap"]').addClass('active');
+                        }
+                        if (id == 'team-and-partners') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#team-and-partners"]').addClass('active');
+                        }
+                    }
+                });
+            });
+            init_slider('carousel_wrapper', 'carousel_container');
+            autoplay_carousel();
+        });
+
+        function init_slider(slider_wrapper, slider_container) {
+            next_frame_info = next_slider_width(slider_wrapper, slider_container);
+            $('.' + slider_container).attr('slider-start', next_frame_info[1]);
+            $('.' + slider_container).attr('slider-end', next_frame_info[2]);
+            $('.' + slider_container).css('width', next_frame_info[0])
+        }
+
+        function toggle_menu() {
+            $('.nav_bar_wrapper').toggle()
+        }
+
+        function carousel_nav_right(slider_wrapper, slider_container) {
+            clearInterval(mySliderInterval);
+            next_frame_info = next_slider_width(slider_wrapper, slider_container);
+            curr_frame_info = prev_slider_width(slider_wrapper, slider_container);
+            var current_left = parseInt($('.' + slider_container + ' ul').css('left'));
+
+            $('.' + slider_container).attr('slider-start', next_frame_info[1]);
+            $('.' + slider_container).attr('slider-end', next_frame_info[2]);
+            $('.' + slider_container).css('width', next_frame_info[0]);
+            if (next_frame_info[1] == 0) {
+                $('.' + slider_container + ' ul').css('left', 0);
+            } else {
+                $('.' + slider_container + ' ul').css('left', (current_left - curr_frame_info[0]));
+            }
+            autoplay_carousel();
+        }
+
+        function carousel_nav_left(slider_wrapper, slider_container) {
+            clearInterval(mySliderInterval);
+            var slider = $('.' + slider_container + ' ul').children();
+            prev_frame_info = prev_prev_slider_width(slider_wrapper, slider_container);
+            var current_left = parseInt($('.' + slider_container + ' ul').css('left'));
+
+            $('.' + slider_container).attr('slider-start', prev_frame_info[1]);
+            $('.' + slider_container).attr('slider-end', prev_frame_info[2]);
+            $('.' + slider_container).css('width', prev_frame_info[0]);
+            if (prev_frame_info[2] == (slider.length - 1)) {
+                var cal_width = 0;
+                var frame_width = 0;
+                for (var i = 0; i < slider.length; i++) {
+                    cal_width = parseInt(slider.eq(i).outerWidth(true));
+                    frame_width += cal_width;
+                }
+                $('.' + slider_container + ' ul').css('left', (-frame_width + prev_frame_info[0]));
+            } else {
+                $('.' + slider_container + ' ul').css('left', (current_left + prev_frame_info[0]));
+            }
+            autoplay_carousel();
+        }
+
+        function next_slider_width(slider_wrapper, slider_container) {
+            var slider_end = parseInt($('.' + slider_container).attr('slider-end')) || 0;
+            var slider_start = slider_end;
+            var container_width = parseInt($('.' + slider_wrapper).width());
+            var frame_width = 0;
+            var cal_width = 0;
+            var slider = $('.' + slider_container + ' ul').children();
+
+            if (slider_end == slider.length - 1) {
+                slider_end = 0;
+                slider_start = 0;
+            }
+            for (var i = slider_end; i < slider.length; i++) {
+                cal_width = parseInt(slider.eq(i).outerWidth(true));
+                frame_width += cal_width;
+                slider_end = i;
+                if (frame_width > container_width) {
+                    frame_width = frame_width - cal_width - 10;
+                    break;
+                }
+            }
+            return [frame_width, slider_start, slider_end]
+        }
+
+        function prev_slider_width(slider_wrapper, slider_container) {
+            var slider_start = parseInt($('.' + slider_container).attr('slider-start'));
+            var slider_end = parseInt($('.' + slider_container).attr('slider-end'));
+            var container_width = parseInt($('.' + slider_wrapper).width());
+            var slider = $('.' + slider_container + ' ul').children();
+            var frame_width = 0;
+            var cal_width = 0;
+            slider_end = slider_end - 1;
+            for (var i = slider_end; i >= slider_start; i--) {
+                cal_width = parseInt(slider.eq(i).outerWidth(true));
+                frame_width += cal_width;
+                if (frame_width > container_width) {
+                    frame_width = frame_width - cal_width - 10;
+                    break;
+                }
+            }
+            return [frame_width, slider_start, slider_end]
+        }
+
+        function prev_prev_slider_width(slider_wrapper, slider_container) {
+            var slider_start = parseInt($('.' + slider_container).attr('slider-start'));
+            var slider_end = parseInt($('.' + slider_container).attr('slider-end'));
+            var container_width = parseInt($('.' + slider_wrapper).width());
+            var slider = $('.' + slider_container + ' ul').children();
+            var frame_width = 0;
+            var cal_width = 0;
+            if (slider_start == 0) {
+                slider_start = slider.length - 1;
+            }
+            slider_end = slider_start;
+            for (var i = slider_start; i >= 0; i--) {
+                cal_width = parseInt(slider.eq(i).outerWidth(true));
+                frame_width += cal_width;
+                slider_start = i;
+                if (frame_width > container_width) {
+                    frame_width = frame_width - cal_width - 10;
+                    break;
+                }
+            }
+            return [frame_width, slider_start, slider_end]
+        }
+
+        function hide_info_modal(t) {
+            $(t).parent().parent().parent().hide();
+            $('html').css('overflow', 'auto');
+        }
+
+        function hide_popup(t) {
+            $(t).hide();
+            $('html').css('overflow', 'auto');
+        }
+
+        function hide_mask_popup(t) {
+            $(t).parent().hide();
+            $('html').css('overflow', 'auto');
+        }
+
+        function show_info_modal(t) {
+            var sctop = $('html').scrollTop();
+            $('html').scrollTop(sctop);
+            $(t).parent().children('.modal_wrapper').show();
+            $('html').css('overflow', 'hidden');
+        }
+
+        function autoplay_carousel() {
+            mySliderInterval = setInterval(function() {
+                carousel_nav_right('carousel_wrapper', 'carousel_container')
+            }, 6000);
+        }
+    </script>
+</body>
+
+</html>

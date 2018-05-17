@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="WqZB6QTbPXQZoN2Pk87sYavcmlppXkTqjKOVWsYuTSI" />
+    <title>Manufacturing Project</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="ERC20 token, ERC20 token trading, Ethereum, Ethereum trading, ERC20 token market place, ERC20 token buy sell, Decentralised exchange">
+    <!-- facebook card -->
+    <meta property="og:image" content="images/wandx-logo.svg">
+    <meta property="og:title" content="WandX - ERC20 Token marketplace - Peer to peer creation and trade of ERC20 Tokens">
+    <meta property="og:url" content="https://www.wandx.co/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WandX">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@WandXDapp">
+    <meta name="twitter:creator" content="@WandXDapp">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <!-- <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="stylesheets/custom.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+    <script src="https://unpkg.com/@angular/core@4.0.1/bundles/core.umd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+</head>
+
+<body ng-app="myApp">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">Manufacturing Downtime Reporting</a>
+    </nav>
+    <div class="container" style="margin-top: 40px;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="particularmachine-tab" data-toggle="tab" href="#particularmachine" role="tab" aria-controls="particularmachine" aria-selected="true">Particular Machine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="particularoperator-tab" data-toggle="tab" href="#particularoperator" role="tab" aria-controls="particularoperator" aria-selected="false">Particular Operator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sectiondowntime-tab" data-toggle="tab" href="#sectiondowntime" role="tab" aria-controls="sectiondowntime" aria-selected="false">Section Downtime</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="mlu-tab" data-toggle="tab" href="#mlu" role="tab" aria-controls="mlu" aria-selected="false">Machine Location Update</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="msu-tab" data-toggle="tab" href="#msu" role="tab" aria-controls="msu" aria-selected="false">Machine Status Update</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="mlm-tab" data-toggle="tab" href="#mlm" role="tab" aria-controls="mlm" aria-selected="false">Live Reporting</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="container tab-pane fade show active" id="particularmachine" role="tabpanel" aria-labelledby="particularmachine-tab" style="margin-top: 45px;" ng-controller="PostPm">
+                <h1>Particular Machine</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                      <!-- <div class="col-md-6" ng-controller="PostPm">
+                        <label for="machineID">Machine ID</label>
+                        <select class="form-control" id="machineID" name="machineID" ng-model="pm.machineID" required>
+                          <option ng-repeat="x in myMachines">{{ x.floorlocation }}-{{ x.type }}-{{ x.make }}-({{ x.model }})-{{ x.mfgno }}-{{ x.serialid }}/</option>
+                        </select>
+                      </div> -->
+                      <div class="col-md-6">
+                        <label for="machineID">Machine ID</label>
+                        <input type="text" class="form-control" id="machineID" placeholder="Machine ID" name="machineID" ng-model="pm.machineID" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="operatorID">Operator ID</label>
+                        <input type="text" class="form-control" id="operatorID" placeholder="Operator ID" name="operatorID" ng-model="pm.operatorID" required>
+                      </div>
+                      <!-- <div class="col-md-6" ng-controller="PostPm">
+                        <label for="operatorID">Operator ID</label>
+                        <select class="form-control" id="operatorID" name="operatorID" ng-model="pm.operatorID" required>
+                          <option ng-repeat="y in myPersons">{{ y.personid }}</option>
+                        </select>
+                      </div> -->
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="floorLocation">Floor</label>
+                        <select class="form-control" id="floorLocation" name="floorLocation" ng-model="pm.floorLocation" required>
+                          <option>GF</option>
+                          <option>FF</option>
+                          <option>SF</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="sectionLocation">Section</label>
+                        <select class="form-control" id="sectionLocation" name="sectionLocation" ng-model="pm.sectionLocation" required>
+                          <option>Collar</option>
+                          <option>Cuff</option>
+                          <option>Front</option>
+                          <option>Back</option>
+                          <option>Sleeve</option>
+                          <option>Assembly</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lineLocation">Line</label>
+                        <select class="form-control" id="lineLocation" name="lineLocation" ng-model="pm.lineLocation" required>
+                          <option>Line 1</option>
+                          <option>Line 2</option>
+                          <option>Line 3</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="caTegory">Category</label>
+                        <select class="form-control" id="caTegory" name="caTegory" ng-model="pm.caTegory" required>
+                          <option>Beltfailure</option>
+                          <option>Needle Change</option>
+                          <option>Coil Failure</option>
+                          <option>Attachment Change</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="newCategoryInfo">New Category Info (Extra)</label>
+                        <textarea class="form-control" id="newCategoryInfo" rows="1" name="newCategoryInfo" ng-model="pm.newCategoryInfo"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-md-6">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" name="startDate" aria-describedby="emailHelp" ng-model="pm.startDate" required>
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      </div>
+                      <div class="col-md-6">
+                        <label for="startTime">Start Time</label>
+                        <input type="time" class="form-control" id="startTime" name="startTime" ng-model="pm.startTime" required>
+                      </div>
+                  </div>
+                  <!-- <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div> -->
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitPm(pm)">Submit</button>
+                    <!-- <button type="button" class="btn btn-info col-md-2">Info</button>
+                    <button type="button" class="btn btn-dark col-md-2">Clear All</button> -->
+                  <!-- <button type="submit" class="btn btn-primary col-md-4">Submit</button> -->
+                </form>
+            </div>
+          <div class="container tab-pane fade" id="particularoperator" role="tabpanel" aria-labelledby="particularoperator-tab" style="margin-top: 45px;" ng-controller="PostPo">
+                <h1>Particular Operator</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label for="operatorID">Operator ID</label>
+                      <input type="text" class="form-control" id="operatorID" placeholder="Operator ID" name="operatorID" ng-model="po.operatorID" required>
+                    </div>
+                      <!-- <div class="col-md-6" ng-controller="myCtrl">
+                        <label for="operatorID">Operator ID</label>
+                        <select class="form-control" id="operatorID" name="operatorID" ng-model="po.operatorID" required>
+                          <option ng-repeat="y in myPersons">{{ y.personid }}</option>
+                        </select>
+                      </div> -->
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="floorLocation">Floor</label>
+                        <select class="form-control" id="floorLocation" name="floorLocation" ng-model="po.floorLocation" required>
+                          <option>GF</option>
+                          <option>FF</option>
+                          <option>SF</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="sectionLocation">Section</label>
+                        <select class="form-control" id="sectionLocation" name="sectionLocation" ng-model="po.sectionLocation" required>
+                          <option>Collar</option>
+                          <option>Cuff</option>
+                          <option>Front</option>
+                          <option>Back</option>
+                          <option>Sleeve</option>
+                          <option>Assembly</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lineLocation">Line</label>
+                        <select class="form-control" id="lineLocation" name="lineLocation" ng-model="po.lineLocation" required>
+                          <option>Line 1</option>
+                          <option>Line 2</option>
+                          <option>Line 3</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="caTegory">Category</label>
+                        <select class="form-control" id="caTegory" name="caTegory" ng-model="po.caTegory" required>
+                          <option>Beltfailure</option>
+                          <option>Needle Change</option>
+                          <option>Coil Failure</option>
+                          <option>Attachment Change</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="reaSon">Reasons for Operator down</label>
+                        <textarea class="form-control" id="reaSon" rows="1" name="reaSon" ng-model="po.reaSon" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-md-6">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" aria-describedby="emailHelp" name="startDate" ng-model="po.startDate" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="startTime">Start Time</label>
+                        <input type="time" class="form-control" id="startTime" name="startTime" ng-model="po.startTime" required>
+                      </div>
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitPo(po)">Submit</button>
+                    
+                </form>
+            </div>
+            <div class="container tab-pane fade" id="sectiondowntime" role="tabpanel" aria-labelledby="sectiondowntime-tab" style="margin-top: 45px;" ng-controller="PostSd">
+                <h1>Section Downtime</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                      <div class="col-md-3">
+                        <label for="floorLocation">Floor</label>
+                        <select class="form-control" id="floorLocation" name="floorLocation" ng-model="sd.floorLocation" required>
+                          <option>GF</option>
+                          <option>FF</option>
+                          <option>SF</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="sectionLocation">Section</label>
+                        <select class="form-control" id="sectionLocation" name="sectionLocation" ng-model="sd.sectionLocation" required>
+                          <option>Collar</option>
+                          <option>Cuff</option>
+                          <option>Front</option>
+                          <option>Back</option>
+                          <option>Sleeve</option>
+                          <option>Assembly</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3">
+                          <label for="lineLocation">Line</label>
+                          <select class="form-control" id="lineLocation" name="lineLocation" ng-model="sd.lineLocation" required>
+                            <option>Line 1</option>
+                            <option>Line 2</option>
+                            <option>Line 3</option>
+                          </select>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="caTegory">Category</label>
+                        <select class="form-control" id="caTegory" name="caTegory" ng-model="sd.caTegory" required>
+                          <option>Beltfailure</option>
+                          <option>Needle Change</option>
+                          <option>Coil Failure</option>
+                          <option>Attachment Change</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-md-3">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" name="startDate" ng-model="sd.startDate" required>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="startTime">Start Time</label>
+                        <input type="time" class="form-control" id="startTime" name="startTime" ng-model="sd.startTime" required>
+                      </div>
+                      <!-- <div class="col-md-3">
+                        <label for="exampleInputEmail1">Stop Date</label>
+                        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      </div>
+                      <div class="col-md-3">
+                        <label for="exampleInputPassword1">Stop Time</label>
+                        <input type="time" class="form-control" id="exampleInputPassword1">
+                      </div> -->
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitSd(sd)">Start</button>
+                    <!-- <button type="button" class="btn btn-info col-md-2">Info</button>
+                    <button type="button" class="btn btn-dark col-md-2">Clear All</button>
+                    <button type="button" class="btn btn-danger col-md-2" disabled>Clear All</button> -->
+                </form>
+            </div>
+            <div class="container tab-pane fade" id="mlu" role="tabpanel" aria-labelledby="mlu-tab" style="margin-top: 45px;" ng-controller="PostMu">
+                <h1>Machine Location Update</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                      <div class="col-md-6">
+                        <label for="machineID">Machine ID</label>
+                        <input type="text" class="form-control" id="machineID" placeholder="Machine ID" name="machineID" ng-model="mu.machineID" required>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="floorLocation">Floor</label>
+                        <select class="form-control" id="floorLocation" name="floorLocation" ng-model="mu.floorLocation" required>
+                          <option>GF</option>
+                          <option>FF</option>
+                          <option>SF</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="sectionLocation">Section</label>
+                        <select class="form-control" id="sectionLocation" name="sectionLocation" ng-model="mu.sectionLocation" required>
+                          <option>Collar</option>
+                          <option>Cuff</option>
+                          <option>Front</option>
+                          <option>Back</option>
+                          <option>Sleeve</option>
+                          <option>Assembly</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lineLocation">Line</label>
+                        <select class="form-control" id="lineLocation" name="lineLocation" ng-model="mu.lineLocation" required>
+                          <option>Line 1</option>
+                          <option>Line 2</option>
+                          <option>Line 3</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="changedBy">Changed By</label>
+                        <input type="text" class="form-control" id="changedBy" placeholder="Operator ID" name="changedBy" ng-model="mu.changedBy" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="reaSons">Reasons for Location Update</label>
+                        <textarea class="form-control" id="reaSons" rows="1" name="reaSons" ng-model="mu.reaSons" required></textarea>
+                    </div>
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitMu(mu)">Submit</button>
+                    <!-- <button type="button" class="btn btn-info col-md-2">Info</button>
+                    <button type="button" class="btn btn-dark col-md-2">Clear All</button> -->
+                </form>
+            </div>
+
+
+            <div class="container tab-pane fade" id="mlm" role="tabpanel" aria-labelledby="mlm-tab" style="margin-top: 45px;" ng-controller="PostMu">
+                <h1>Live Reporting</h1>
+                <hr>
+                <div ng-controller="myCtrl1">
+                  <h6>Particular Machine Downtime</h6>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Machine ID</th>
+                        <th scope="col">Operator ID</th>
+                        <th scope="col">Floor</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Line</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Extra Info</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Start Time</th>
+                      </tr>
+                    </thead>
+                    <tbody style="background-color: #bbbbee;">
+                      <tr ng-repeat="x in particularMachine">
+                        <td scope="row">{{ x.machineid }}</td>
+                        <td>{{ x.operatorid }}</td>
+                        <td>{{ x.floorlocation }}</td>
+                        <td>{{ x.sectionlocation }}</td>
+                        <td>{{ x.linelocation }}</td>
+                        <td>{{ x.category }}</td>
+                        <td>{{ x.newcategoryinfo }}</td>
+                        <td>{{ x.startdate }}</td>
+                        <td>{{ x.starttime }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div ng-controller="myCtrl2">
+                  <h6>Particular Operator Downtime</h6>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Operator ID</th>
+                        <th scope="col">Floor</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Line</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Reasons for Operator Downtime</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Start Time</th>
+                      </tr>
+                    </thead>
+                    <tbody style="background-color: #c7f8d2;">
+                      <tr ng-repeat="y in particularOperator">
+                        <td scope="row">{{ y.operatorid }}</td>
+                        <td>{{ y.floorlocation }}</td>
+                        <td>{{ y.sectionlocation }}</td>
+                        <td>{{ y.linelocation }}</td>
+                        <td>{{ y.category }}</td>
+                        <td>{{ y.reason }}</td>
+                        <td>{{ y.startdate }}</td>
+                        <td>{{ y.starttime }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div ng-controller="myCtrl3">
+                  <h6>Particular Section Downtime</h6>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Floor</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Line</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Start Time</th>
+                      </tr>
+                    </thead>
+                    <tbody style="background-color: #d3a9cc;">
+                      <tr ng-repeat="x in sectionDowntime">
+                        <td scope="row">{{ x.floorlocation }}</td>
+                        <td>{{ x.sectionlocation }}</td>
+                        <td>{{ x.linelocation }}</td>
+                        <td>{{ x.category }}</td>
+                        <td>{{ x.startdate }}</td>
+                        <td>{{ x.starttime }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div ng-controller="myCtrl4">
+                  <h6>Machine Location Update</h6>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Machine ID</th>
+                        <th scope="col">Floor</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Line</th>
+                        <th scope="col">ChangeD By</th>
+                        <th scope="col">Reason for change</th>
+                      </tr>
+                    </thead>
+                    <tbody style="background-color: #ddc0a7;">
+                      <tr ng-repeat="x in machineLocationUpdate">
+                        <td scope="row">{{ x.machineid }}</td>
+                        <td>{{ x.floorlocation }}</td>
+                        <td>{{ x.sectionlocation }}</td>
+                        <td>{{ x.linelocation }}</td>
+                        <td>{{ x.changedby }}</td>
+                        <td>{{ x.reasons }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="container tab-pane fade" id="msu" role="tabpanel" aria-labelledby="msu-tab" style="margin-top: 45px;" ng-controller="PostPo">
+                <h1>Machine Status Update</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label for="operatorID">Machine ID</label>
+                      <input type="text" class="form-control" id="operatorID" placeholder="Machine ID" name="operatorID" ng-model="po.operatorID" required>
+                    </div>
+                      <!-- <div class="col-md-6" ng-controller="myCtrl">
+                        <label for="operatorID">Operator ID</label>
+                        <select class="form-control" id="operatorID" name="operatorID" ng-model="po.operatorID" required>
+                          <option ng-repeat="y in myPersons">{{ y.personid }}</option>
+                        </select>
+                      </div> -->
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="floorLocation">Floor</label>
+                        <select class="form-control" id="floorLocation" name="floorLocation" ng-model="po.floorLocation" required>
+                          <option>GF</option>
+                          <option>FF</option>
+                          <option>SF</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="sectionLocation">Section</label>
+                        <select class="form-control" id="sectionLocation" name="sectionLocation" ng-model="po.sectionLocation" required>
+                          <option>Collar</option>
+                          <option>Cuff</option>
+                          <option>Front</option>
+                          <option>Back</option>
+                          <option>Sleeve</option>
+                          <option>Assembly</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lineLocation">Line</label>
+                        <select class="form-control" id="lineLocation" name="lineLocation" ng-model="po.lineLocation" required>
+                          <option>Line 1</option>
+                          <option>Line 2</option>
+                          <option>Line 3</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="caTegory">Machine Status</label>
+                        <select class="form-control" id="caTegory" name="caTegory" ng-model="po.caTegory" required>
+                          <option>Working</option>
+                          <option>Not Working</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="operatorID">Chaned By</label>
+                      <input type="text" class="form-control" id="operatorID" placeholder="Operator ID" name="operatorID" ng-model="po.operatorID" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="reaSon">Reasons for Operator down</label>
+                        <textarea class="form-control" id="reaSon" rows="1" name="reaSon" ng-model="po.reaSon" required></textarea>
+                    </div>
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitPo(po)">Submit</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var app = angular.module('myApp', []);
+        app.controller("PostPm", function ($scope, $http){
+            $scope.SubmitPm = function(pm){
+                var data = {
+                  machineID: pm.machineID,
+                  operatorID: pm.operatorID,
+                  floorLocation: pm.floorLocation,
+                  sectionLocation: pm.sectionLocation,
+                  lineLocation: pm.lineLocation,
+                  caTegory: pm.caTegory,
+                  newCategoryInfo: pm.newCategoryInfo,
+                  startDate: pm.startDate,
+                  startTime: pm.startTime
+            };
+
+            $http({
+                url: 'http://localhost:3000/api/mdp_pm',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+        app.controller("PostPo", function ($scope, $http){
+            $scope.SubmitPo = function(po){
+                var data = {
+                  operatorID: po.operatorID,
+                  floorLocation: po.floorLocation,
+                  sectionLocation: po.sectionLocation,
+                  lineLocation: po.lineLocation,
+                  caTegory: po.caTegory,
+                  reaSon: po.reaSon,
+                  startDate: po.startDate,
+                  startTime: po.startTime
+            };
+            $http({
+                url: 'http://localhost:3000/api/mdp_po',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+
+        app.controller("PostSd", function ($scope, $http){
+            $scope.SubmitSd = function(sd){
+                var data = {
+                  floorLocation: sd.floorLocation,
+                  sectionLocation: sd.sectionLocation,
+                  lineLocation: sd.lineLocation,
+                  caTegory: sd.caTegory,
+                  startDate: sd.startDate,
+                  startTime: sd.startTime
+            };
+            $http({
+                url: 'http://localhost:3000/api/mdp_sd',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+
+        app.controller("PostMu", function ($scope, $http){
+            $scope.SubmitMu = function(mu){
+                var data = {
+                  machineID: mu.machineID,
+                  floorLocation: mu.floorLocation,
+                  sectionLocation: mu.sectionLocation,
+                  lineLocation: mu.lineLocation,
+                  changedBy: mu.changedBy,
+                  reaSons: mu.reaSons
+            };
+            $http({
+                url: 'http://localhost:3000/api/mdp_mu',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+
+        // app.controller('myCtrl', function($scope, $http) {
+        //     $http.get("http://localhost:3000/api/addconcernedpersons")
+        //     .then(function(response) {
+        //         $scope.myPersons = response.data;
+        //     });
+        // });
+
+        // app.controller('myCtrls', function($scope, $http) {
+        //     $http.get("http://localhost:3000/api/addnewmachines")
+        //     .then(function(response) {
+        //         $scope.myMachines = response.data;
+        //     });
+        // });
+
+        app.controller('myCtrl1', function($scope, $http) {
+            $http.get("http://localhost:3000/api/mdp_pms")
+            .then(function(response) {
+                $scope.particularMachine = response.data;
+            });
+        });
+
+        app.controller('myCtrl2', function($scope, $http) {
+            $http.get("http://localhost:3000/api/mdp_pos")
+            .then(function(response) {
+                $scope.particularOperator = response.data;
+            });
+        });
+
+        app.controller('myCtrl3', function($scope, $http) {
+            $http.get("http://localhost:3000/api/mdp_sds")
+            .then(function(response) {
+                $scope.sectionDowntime = response.data;
+            });
+        });
+
+        app.controller('myCtrl4', function($scope, $http) {
+            $http.get("http://localhost:3000/api/mdp_mus")
+            .then(function(response) {
+                $scope.machineLocationUpdate = response.data;
+            });
+        });
+
+        // $('#myModal').on('shown.bs.modal', function() {
+        //     $('#myInput').focus()
+        // })
+    </script>
+</body>
+
+</html>

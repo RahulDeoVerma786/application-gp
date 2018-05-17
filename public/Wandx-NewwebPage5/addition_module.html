@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="WqZB6QTbPXQZoN2Pk87sYavcmlppXkTqjKOVWsYuTSI" />
+    <title>Manufacturing Project</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="ERC20 token, ERC20 token trading, Ethereum, Ethereum trading, ERC20 token market place, ERC20 token buy sell, Decentralised exchange">
+    <!-- facebook card -->
+    <!-- <meta property="og:image" content="images/wandx-logo.svg"> -->
+    <meta property="og:title" content="WandX - ERC20 Token marketplace - Peer to peer creation and trade of ERC20 Tokens">
+    <meta property="og:url" content="https://www.wandx.co/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WandX">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@WandXDapp">
+    <meta name="twitter:creator" content="@WandXDapp">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="stylesheets/custom.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+    <script src="https://unpkg.com/@angular/core@4.0.1/bundles/core.umd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+</head>
+
+<body ng-app="myApp">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">Manufacturing Application Addition Module</a>
+    </nav>
+    <div class="container" style="margin-top: 40px;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="particularmachine-tab" data-toggle="tab" href="#particularmachine" role="tab" aria-controls="particularmachine" aria-selected="true">Add Concerned Person</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="particularoperator-tab" data-toggle="tab" href="#particularoperator" role="tab" aria-controls="particularoperator" aria-selected="false">Add New Machine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="acs-tab" data-toggle="tab" href="#acs" role="tab" aria-controls="acs" aria-selected="false">Add Consumable Cost</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="asp-tab" data-toggle="tab" href="#asp" role="tab" aria-controls="asp" aria-selected="false">Add Spare Parts Cost</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" id="sectiondowntime-tab" data-toggle="tab" href="#sectiondowntime" role="tab" aria-controls="sectiondowntime" aria-selected="false">Section Downtime</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" id="mlm-tab" data-toggle="tab" href="#mlm" role="tab" aria-controls="mlm" aria-selected="false">Machine Live Maintenance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="mlu-tab" data-toggle="tab" href="#mlu" role="tab" aria-controls="mlu" aria-selected="false">Machine Location Update</a>
+          </li> -->
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="container tab-pane fade show active" id="particularmachine" role="tabpanel" aria-labelledby="particularmachine-tab" style="margin-top: 45px;" ng-controller="HttpGetController">
+                <h1>Add Concerned Person</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                      <div class="col-md-4">
+                        <label for="personID">Person ID</label>
+                        <input type="text" class="form-control" id="personID" placeholder="Person ID" name="personID" ng-model="user.personID" required>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="mobileNumber">Mobile Number</label>
+                        <input type="text" class="form-control" id="mobileNumber" placeholder="Mobile Number" name="mobileNumber" ng-model="user.mobileNumber" required>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="machineassignedId">Machine Assigned ID</label>
+                        <input type="text" class="form-control" id="machineassignedId" placeholder="Machine Assigned ID" name="machineassignedId" ng-model="user.machineassignedId" required>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="floorLocation">Floor</label>
+                        <select class="form-control" id="floorLocation" name="floorLocation" ng-model="user.floorLocation" required>
+                          <option>GF</option>
+                          <option>FF</option>
+                          <option>SF</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="sectionLocation">Section</label>
+                        <select class="form-control" id="sectionLocation" name="sectionLocation" ng-model="user.sectionLocation" required>
+                          <option>Collar</option>
+                          <option>Cuff</option>
+                          <option>Front</option>
+                          <option>Back</option>
+                          <option>Sleeve</option>
+                          <option>Assembly</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lineLocation">Line</label>
+                        <select class="form-control" id="lineLocation" name="lineLocation" ng-model="user.lineLocation" required>
+                          <option>Line 1</option>
+                          <option>Line 2</option>
+                          <option>Line 3</option>
+                        </select>
+                    </div>
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitPerson(user)">Save User</button>
+                    <!-- <button type="button" class="btn btn-dark col-md-2">Clear All</button> -->
+                  <!-- <button type="submit" class="btn btn-primary col-md-4">Submit</button> -->
+                </form>
+                <hr>
+                <h1>List of All Persons</h1>
+                <div ng-controller="myCtrl">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Person ID</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">Machine Assigned ID</th>
+                        <th scope="col">Floor</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Line</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in myPersons | orderBy: 'personid'">
+                        <td scope="row">{{ x.personid }}</td>
+                        <td>{{ x.mobilenumber }}</td>
+                        <td>{{ x.machineassignedid }}</td>
+                        <td>{{ x.floorlocation }}</td>
+                        <td>{{ x.sectionlocation }}</td>
+                        <td>{{ x.linelocation }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          <div class="container tab-pane fade" id="particularoperator" role="tabpanel" aria-labelledby="particularoperator-tab" style="margin-top: 45px;" ng-controller="HttpGetControllers">
+                <h1>Add New Machine</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="floorLocation">Floor</label>
+                        <select class="form-control" id="floorLocation" name="floorLocation" ng-model="machine.floorLocation" required>
+                          <option>GF</option>
+                          <option>FF</option>
+                          <option>SF</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="sectionLocation">Section</label>
+                        <select class="form-control" id="sectionLocation" name="sectionLocation" ng-model="machine.sectionLocation" required>
+                          <option>Collar</option>
+                          <option>Cuff</option>
+                          <option>Front</option>
+                          <option>Back</option>
+                          <option>Sleeve</option>
+                          <option>Assembly</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lineLocation">Line</label>
+                        <select class="form-control" id="lineLocation" name="lineLocation" ng-model="machine.lineLocation" required>
+                          <option>Line 1</option>
+                          <option>Line 2</option>
+                          <option>Line 3</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                      <label for="serialId">Serial ID</label>
+                      <input type="text" class="form-control" id="serialId" placeholder="Serial ID" name="serialId" ng-model="machine.serialId" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Type">Type</label>
+                        <select class="form-control" id="Type" name="Type" ng-model="machine.Type" required>
+                          <option>SNLS</option>
+                          <option>DNLS</option>
+                          <option>BTHL</option>
+                          <option>BTAT</option>
+                          <option>SNCS</option>
+                          <option>SNEC</option>
+                          <option>BTWRP</option>
+                          <option>FOTA</option>
+                          <option>SI</option>
+                          <option>GRFM</option>
+                          <option>SPRS</option>
+                          <option>CUFM</option>
+                          <option>CLFM</option>
+                          <option>FPRS</option>
+                          <option>O/L</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Make">Make</label>
+                        <select class="form-control" id="Make" name="Make" ng-model="machine.Make" required>
+                          <option>BRTR</option>
+                          <option>JUKI</option>
+                          <option>JACK</option>
+                          <option>PFAF</option>
+                          <option>ASLT</option>
+                          <option>TONY</option>
+                          <option>NSIN</option>
+                          <option>DURK</option>
+                          <option>SNGR</option>
+                          <option>RMSN</option>
+                          <option>TPCL</option>
+                          <option>KANS</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-3">
+                      <label for="Model">Model</label>
+                      <input type="text" class="form-control" id="Model" placeholder="Serial ID" name="Model" ng-model="machine.Model" required>
+                    </div>
+                      <div class="col-md-3">
+                        <label for="Date">Date</label>
+                        <input type="date" class="form-control" id="Date" name="Date" ng-model="machine.Date" required>
+                      </div>
+                      <div class="col-md-3">
+                      <label for="buyingPrice">Buying Price</label>
+                      <input type="text" class="form-control" id="buyingPrice" placeholder="Buying Price" name="buyingPrice" ng-model="machine.buyingPrice" required>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="mfgNo">MFG No</label>
+                      <input type="text" class="form-control" id="mfgNo" placeholder="Manufacturing Number" name="mfgNo" ng-model="machine.mfgNo" required>
+                    </div>
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitMachine(machine)">Save Machine</button>
+                    <!-- <button type="button" class="btn btn-info col-md-2">Info</button>
+                    <button type="button" class="btn btn-dark col-md-2">Clear All</button> -->
+                </form>
+                <hr>
+                <h1>List of All Machines</h1>
+                <div ng-controller="myCtrls">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Machine ID</th>
+                        <th scope="col">Floor</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Line</th>
+                        <th scope="col">Serial ID</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Make</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Buying Price</th>
+                        <th scope="col">MFG No</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in myMachines | orderBy: 'date'">
+                        <td scope="row">{{ x.floorlocation }}-{{ x.type }}-{{ x.make }}-({{ x.model }})-{{ x.mfgno }}-{{ x.serialid }}/</td>
+                        <td>{{ x.floorlocation }}</td>
+                        <td>{{ x.sectionlocation }}</td>
+                        <td>{{ x.linelocation }}</td>
+                        <td>{{ x.serialid }}</td>
+                        <td>{{ x.type }}</td>
+                        <td>{{ x.make }}</td>
+                        <td>{{ x.model }}</td>
+                        <td>{{ x.date }}</td>
+                        <td>{{ x.buyingprice }}</td>
+                        <td>{{ x.mfgno }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="container tab-pane fade" id="acs" role="tabpanel" aria-labelledby="acs-tab" style="margin-top: 45px;" ng-controller="HttpGetControllerss">
+                <h1>Add New Consumable Cost</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                      <label for="assetID">Machine ID</label>
+                      <input type="text" class="form-control" id="assetID" placeholder="Machine ID" name="assetID" ng-model="consumable.assetID" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="datE">Date</label>
+                      <input type="date" class="form-control" id="datE" name="datE" ng-model="consumable.datE" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="namE">Type/Name</label>
+                      <input type="text" class="form-control" id="namE" placeholder="Type/Name" name="namE" ng-model="consumable.namE" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label for="numbeR">Number/Amount</label>
+                      <input type="text" class="form-control" id="numbeR" placeholder="Number/Amount" name="numbeR" ng-model="consumable.numbeR" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="consumableCost">Consumable Cost</label>
+                      <input type="text" class="form-control" id="consumableCost" placeholder="Consumable Cost" name="consumableCost" ng-model="consumable.consumableCost" required>
+                    </div>
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitConsumableCost(consumable)">Save Details</button>
+                    <!-- <button type="button" class="btn btn-info col-md-2">Info</button>
+                    <button type="button" class="btn btn-dark col-md-2">Clear All</button> -->
+                </form>
+                <hr>
+                <h1>List of All Machines Consumable Costs</h1>
+                <div ng-controller="myCtrlss">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Machine ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Type/Name</th>
+                        <th scope="col">Number/Amount</th>
+                        <th scope="col">Consumable Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in myConsumableCosts | orderBy: 'date'">
+                        <td>{{ x.asstid }}</td>
+                        <td>{{ x.date }}</td>
+                        <td>{{ x.name }}</td>
+                        <td>{{ x.number }}</td>
+                        <td>{{ x.consumablecost }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="container tab-pane fade" id="asp" role="tabpanel" aria-labelledby="asp-tab" style="margin-top: 45px;" ng-controller="HttpGetControllersss">
+              <h1>Add New Spare Part Cost</h1>
+                <hr>
+                <form style="padding: 10px;">
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                      <label for="assetID">Machine ID</label>
+                      <input type="text" class="form-control" id="assetID" placeholder="Machine ID" name="assetID" ng-model="spareparts.assetID" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="datE">Date</label>
+                      <input type="date" class="form-control" id="datE" name="datE" ng-model="spareparts.datE" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="categorY">Category/Name</label>
+                      <input type="text" class="form-control" id="categorY" placeholder="Category/Name" name="categorY" ng-model="spareparts.categorY" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label for="numbeR">Number of Spares</label>
+                      <input type="text" class="form-control" id="numbeR" placeholder="Number of Spares" name="numbeR" ng-model="spareparts.numbeR" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="spareCost">Cost of Spares</label>
+                      <input type="text" class="form-control" id="spareCost" placeholder="Cost of Spares" name="spareCost" ng-model="spareparts.spareCost" required>
+                    </div>
+                  </div>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitSparePartsCost(spareparts)">Save Details</button>
+                    <!-- <button type="button" class="btn btn-info col-md-2">Info</button>
+                    <button type="button" class="btn btn-dark col-md-2">Clear All</button> -->
+                </form>
+                <hr>
+                <h1>List of All Machines Spare Parts Costs</h1>
+                <div ng-controller="myCtrlsss">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Machine ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Category/Name</th>
+                        <th scope="col">Number of Spares</th>
+                        <th scope="col">Cost of Spares</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in mySparePartsCosts | orderBy: 'date'">
+                        <td>{{ x.asstid }}</td>
+                        <td>{{ x.date }}</td>
+                        <td>{{ x.category }}</td>
+                        <td>{{ x.number }}</td>
+                        <td>{{ x.sparecost }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="page_wrapper">
+        <div class="page_container">
+            <div class="review">
+                <div class="container">
+                    <div class="webReview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="writeYourReview">
+                                    <button class="btn btn-default" data-fancybox data-src="#trueModal" data-modal="true">Write your review</button>
+                                </div>
+                                <div style="display: none;width: 450px;" id="trueModal" ng-controller="HttpGetController">
+                                    <div class="closeBtn">
+                                        <p data-fancybox-close class="btn">x</p>
+                                    </div>
+                                    <div class="userReviewPopup">
+                                        <div class="userNamePopup">
+                                            <p>Name</p>
+                                            <input type="text" name="firstName" ng-model="user.firstName" required>
+                                        </div>
+                                        <div class="uderRating">
+                                            <div class="pageRating">
+                                                <p>Rate Us</p>
+                                                <select id="ticketNum" type="number" name="ticketNum" list="defaultNumbers" name="userRating" ng-model="user.userRating" required>
+                                                  <option>1</option>
+                                                  <option>2</option>
+                                                  <option>3</option>
+                                                  <option>4</option>
+                                                  <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="userComment">
+                                            <p>Your Review Here</p>
+                                            <textarea name="text" cols="20" rows="5" name="userReview" ng-model="user.userReview" required></textarea>
+                                        </div>
+                                        <div class="submitBtn">
+                                            <button class="btn btn-default" ng-click="SubmitReview(user)" data-fancybox-close>Submit</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-controller="myCtrl">
+                        <div class="userReview" ng-repeat="x in myWelcome">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="userDetail">
+                                    <div class="userImage">
+                                        <img src="images/team/profile.png" alt="">
+                                    </div>
+                                    <div class="userName">
+                                        <p>{{ x.username }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="pageRating" ng-if="x.rateus==1">
+                                    <div class="star">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="pageRating" ng-if="x.rateus==2">
+                                    <div class="star">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="pageRating" ng-if="x.rateus==3">
+                                    <div class="star">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="pageRating" ng-if="x.rateus==4">
+                                    <div class="star">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="pageRating" ng-if="x.rateus==5">
+                                    <div class="star">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviewContent">
+                            <p>{{ x.review }}</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer_wapper ">
+                <div class="container">
+                    <div class="row nomarg">
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>About Us</li>
+                                <li><a target="_blank" href="whitepaper.html">Whitepaper</a></li>
+                                <li class="copyright">Copyright © 2018 Wandx</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Legal</li>
+                                <li><a href="terms-of-use.html" target="_blank">Terms of Use</a></li>
+                                <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Trading</li>
+                                <li><a href="https://github.com/WandXDapp" target="_blank">Smart Contracts</a></li>
+                                <li><a href="#">Fees</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Contact Us</li>
+                                <li>support@wandx.co</li>
+                                <li>business@wandx.co</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <li>Social</li>
+                                <li class="social-network">
+                                    <a href="https://medium.com/wandx" target="_blank"><i class="fab fa-medium-m"></i></a>
+                                    <a href="https://github.com/WandXDapp" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://twitter.com/WandXDapp" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/wandx.co/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://t.me/wandxbeta" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                                    <a href="https://www.instagram.com/wandx.co/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div> -->
+    <script>
+
+        var app = angular.module('myApp', []);
+        app.controller("HttpGetController", function ($scope, $http){
+            $scope.SubmitPerson = function(user){
+                var data = {
+                personID: user.personID,
+                mobileNumber: user.mobileNumber,
+                machineassignedId: user.machineassignedId,
+                floorLocation: user.floorLocation,
+                sectionLocation: user.sectionLocation,
+                lineLocation: user.lineLocation
+            };
+            $http({
+                url: 'http://localhost:3000/api/addconcernedperson',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+        app.controller("HttpGetControllers", function ($scope, $http){
+            $scope.SubmitMachine = function(machine){
+                var data = {
+                floorLocation: machine.floorLocation,
+                sectionLocation: machine.sectionLocation,
+                lineLocation: machine.lineLocation,
+                serialId: machine.serialId,
+                Type: machine.Type,
+                Make: machine.Make,
+                Model: machine.Model,
+                Date: machine.Date,
+                buyingPrice: machine.buyingPrice,
+                mfgNo: machine.mfgNo
+            };
+            $http({
+                url: 'http://localhost:3000/api/addnewmachine',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+
+        app.controller("HttpGetControllerss", function ($scope, $http){
+            $scope.SubmitConsumableCost = function(consumable){
+                var data = {
+                assetID: consumable.assetID,
+                datE: consumable.datE,
+                namE: consumable.namE,
+                numbeR: consumable.numbeR,
+                consumableCost: consumable.consumableCost
+            };
+            $http({
+                url: 'http://localhost:3000/api/addnewconsumablecost',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+
+
+        app.controller("HttpGetControllersss", function ($scope, $http){
+            $scope.SubmitSparePartsCost = function(spareparts){
+                var data = {
+                assetID: spareparts.assetID,
+                datE: spareparts.datE,
+                categorY: spareparts.categorY,
+                numbeR: spareparts.numbeR,
+                spareCost: spareparts.spareCost
+            };
+            $http({
+                url: 'http://localhost:3000/api/addnewsparepasrtscost',
+                method: "POST",
+                data:  data,
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            window.location.reload();
+            }
+        });
+
+        app.controller('myCtrl', function($scope, $http) {
+            $http.get("http://localhost:3000/api/addconcernedpersons")
+            .then(function(response) {
+                $scope.myPersons = response.data;
+            });
+        });
+
+        app.controller('myCtrls', function($scope, $http) {
+            $http.get("http://localhost:3000/api/addnewmachines")
+            .then(function(response) {
+                $scope.myMachines = response.data;
+            });
+        });
+
+        app.controller('myCtrlss', function($scope, $http) {
+            $http.get("http://localhost:3000/api/addnewconsumablecosts")
+            .then(function(response) {
+                $scope.myConsumableCosts = response.data;
+            });
+        });
+
+        app.controller('myCtrlsss', function($scope, $http) {
+            $http.get("http://localhost:3000/api/addnewsparepasrtscosts")
+            .then(function(response) {
+                $scope.mySparePartsCosts = response.data;
+            });
+        });
+
+        // $('#myModal').on('shown.bs.modal', function() {
+        //     $('#myInput').focus()
+        // })
+    </script>
+</body>
+
+</html>

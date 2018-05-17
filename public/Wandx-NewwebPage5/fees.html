@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="WqZB6QTbPXQZoN2Pk87sYavcmlppXkTqjKOVWsYuTSI" />
+    <title>WandX - ERC20 Token marketplace - Peer to peer creation and trade of ERC20 Tokens | Ethereum ERC20 token trading</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="ERC20 token, ERC20 token trading, Ethereum, Ethereum trading, ERC20 token market place, ERC20 token buy sell, Decentralised exchange">
+    <!-- facebook card -->
+    <!-- <meta property="og:image" content="images/wandx-logo.svg"> -->
+    <meta property="og:title" content="WandX - ERC20 Token marketplace - Peer to peer creation and trade of ERC20 Tokens">
+    <meta property="og:url" content="https://www.wandx.co/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WandX">
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@WandXDapp">
+    <meta name="twitter:creator" content="@WandXDapp">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css">
+    <script src="./javascripts/jquery-3.2.1.min.js"></script>
+    <script src="./javascripts/bootstrap.min.js"></script>
+    <script src="./javascripts/owl.carousel.js"></script>
+    <link rel="stylesheet" href="stylesheets/custom.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+
+    <!-- Start of wandx Zendesk Widget script -->
+    <script>
+        window.zEmbed || function(e, t) {
+            var n, o, d, i, s, a = [],
+                r = document.createElement("iframe");
+            window.zEmbed = function() {
+                a.push(arguments)
+            }, window.zE = window.zE || window.zEmbed, r.src = "javascript:false", r.title = "", r.role = "presentation", (r.frameElement || r).style.cssText = "display: none", d = document.getElementsByTagName("script"), d = d[d.length - 1], d.parentNode.insertBefore(r, d), i = r.contentWindow, s = i.document;
+            try {
+                o = s
+            } catch (e) {
+                n = document.domain, r.src = 'javascript:var d=document.open();d.domain="' + n + '";void(0);', o = s
+            }
+            o.open()._l = function() {
+                var e = this.createElement("script");
+                n && (this.domain = n), e.id = "js-iframe-async", e.src = "https://assets.zendesk.com/embeddable_framework/main.js", this.t = +new Date, this.zendeskHost = "wandx.zendesk.com", this.zEQueue = a, this.body.appendChild(e)
+            }, o.write('<body onload="document._l();">'), o.close()
+        }();
+        window.zESettings = {
+            webWidget: {
+                color: {
+                    theme: '#30779b'
+                }
+            }
+        };
+    </script>
+    <!-- End of wandx Zendesk Widget script -->
+
+    <div class="page_wrapper">
+        <div class="page_container">
+            <header class="header_wrapper">
+                <div class="header_container">
+                    <div class="logo_wrapper">
+                        <div class="logo_container">
+                            <a href="/">
+                                <img width="111" height="43" src="images/wandx.png" alt="WandX ethereum,ERC20 token trading platform logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="responsive_menu_wrapper">
+                        <div class="responsive_menu_container" onclick="toggle_menu()">
+                            <img width="30" height="21" src="images/menu-open.svg" alt="menu open">
+                        </div>
+                    </div>
+                    <div class="nav_bar_wrapper">
+                        <div class="responsive_menu_wrapper">
+                            <div class="responsive_menu_container" onclick="toggle_menu()">
+                                <img width="30" height="30" src="images/menu-close.svg" alt="menu close">
+                            </div>
+                        </div>
+                        <div class="nav_bar_container">
+                            <ul class="nav_menu">
+                                <li><a href="#">Whitepaper</a></li>
+                                <li><a href="https://www.wandx.co/">How It Works</a></li>
+                                <li><a href="https://www.wandx.co/">Roadmap</a></li>
+                                <li><a href="https://www.wandx.co/">Team &amp; Partners</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </header>
+            <div class="policy-holder white-paper">
+                <h4 class="fee-text">WandX is a decentralized ERC20 Token and ERC20 Token Basket trading platform. Smart contracts built on the Ethereum blockchain allow for peer to peer swap of ERC20 Tokens and ERC20 Token baksets.</h4>
+                <h6>The WAND Token is can be used to get a 75% discount on the exchange fee.</h6>
+            </div>
+            <footer class="footer_wapper footer-fix">
+                <div class="container">
+                    <div class="row nomarg">
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>About Us</li>
+                                <li><a target="_blank" href="whitepaper.html">Whitepaper</a></li>
+                                <li class="copyright">Copyright © 2018 Wandx</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Legal</li>
+                                <li><a href="terms-of-use.html" target="_blank">Terms of Use</a></li>
+                                <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Trading</li>
+                                <li><a href="https://github.com/WandXDapp" target="_blank">Smart Contracts</a></li>
+                                <li><a href="#">Fees</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-sm-2 col-6">
+                            <ul>
+                                <li>Contact Us</li>
+                                <li>support@wandx.co</li>
+                                <li>business@wandx.co</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
+                            <ul>
+                                <li>Social</li>
+                                <li class="social-network">
+                                    <a href="https://medium.com/wandx" target="_blank"><i class="fab fa-medium-m"></i></a>
+                                    <a href="https://github.com/WandXDapp" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://twitter.com/WandXDapp" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/wandx.co/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://t.me/wandxbeta" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                                    <a href="https://www.instagram.com/wandx.co/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script data-react-helmet="true" type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "wandx",
+            "alternateName": "wandx ERC20 token trading",
+            "url": "https://www.wandx.co",
+            "potentialAction": {}
+        }
+    </script>
+    <script data-react-helmet="true" type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "wandx PTE Ltd.",
+            "url": "https://wandx.co",
+            "sameAs": [
+                "https://www.facebook.com/wandx.co/",
+                "https://twitter.com/WandXDapp",
+                " https://www.youtube.com/channel/UCqCYHqV59VklhyEMJgZGFDA",
+                "https://www.instagram.com/wandx.co/",
+                "http://plus.google.com/",
+                "https://in.linkedin.com/company/chainflux"
+            ],
+            "logo": "https://www.wandx.co/images/wandx.png"
+        }
+    </script>
+    <script>
+        $(function() {
+            var curr_year = (new Date()).getFullYear();
+            $('#copyright-year').text(curr_year)
+            $('.navbar-menu li').click(function(e) {
+                e.preventDefault();
+                $(document).off("scroll");
+                $('.navbar-menu li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $(document).on('click', '[data-video]', function(e) {
+                $(this).parent('.embed-responsive').css('height', $(this).parent('.embed-responsive').height());
+                $(this).parent('.embed-responsive').css('width', $(this).parent('.embed-responsive').width());
+                e.preventDefault();
+                var thisUrl = $(this).data('video');
+                var youtubeUrl = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + thisUrl + '?autoplay=1&loop=0&showinfo=0&theme=light&color=red&controls=1&modestbranding=0&start=0&fs=1&iv_load_policy=3&wmode=transparent&rel=0" allowfullscreen></iframe>';
+                $(this).parent('.embed-responsive').html(youtubeUrl);
+            });
+
+            $.fn.smoothScroll = function(options) {
+
+                return this.each(function() {
+                    $(this).bind('click', function(e) {
+                        e.preventDefault();
+
+                        var $href = 'body';
+                        if ($(this).data('target')) {
+                            $href = $(this).data('target');
+                        } else if ($(this).attr('href')) {
+                            $href = $(this).attr('href');
+                        } else {
+                            $href = 'body';
+                        }
+
+                        // Default options.
+                        var settings = $.extend({
+                            fromTop: 0,
+                            speed: 1000,
+                            easing: 'swing'
+                        }, options);
+
+                        if ($($href).length == 0) {
+                            console.log('taget ' + $href + ' not exists');
+                        } else {
+                            $('html, body').stop().animate({
+                                scrollTop: $($href).offset().top - settings.fromTop
+                            }, settings.speed, settings.easing);
+                        }
+
+                    });
+
+                });
+            };
+
+            $('.nav_menu > li > a[href^="#"]').smoothScroll({
+                fromTop: ($(window).width() > 786) ? 123 : 70
+            });
+
+            $(window).on('scroll', function() {
+                $('.target-section').each(function() {
+                    if ($(window).scrollTop() >= $(this).position().top) {
+                        var id = $(this).attr('id');
+                        if (id == 'about') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#about"]').addClass('active');
+                        }
+                        if (id == 'how-it-works') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#how-it-works"]').addClass('active');
+                        }
+                        if (id == 'roadmap') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#roadmap"]').addClass('active');
+                        }
+                        if (id == 'team-and-partners') {
+                            $('.nav_menu li').removeClass('active');
+                            $('a[href="#team-and-partners"]').addClass('active');
+                        }
+                    }
+                });
+            });
+            init_slider('carousel_wrapper', 'carousel_container');
+            autoplay_carousel();
+        });
+
+        function init_slider(slider_wrapper, slider_container) {
+            next_frame_info = next_slider_width(slider_wrapper, slider_container);
+            $('.' + slider_container).attr('slider-start', next_frame_info[1]);
+            $('.' + slider_container).attr('slider-end', next_frame_info[2]);
+            $('.' + slider_container).css('width', next_frame_info[0])
+        }
+
+        function toggle_menu() {
+            $('.nav_bar_wrapper').toggle()
+        }
+
+        function carousel_nav_right(slider_wrapper, slider_container) {
+            clearInterval(mySliderInterval);
+            next_frame_info = next_slider_width(slider_wrapper, slider_container);
+            curr_frame_info = prev_slider_width(slider_wrapper, slider_container);
+            var current_left = parseInt($('.' + slider_container + ' ul').css('left'));
+
+            $('.' + slider_container).attr('slider-start', next_frame_info[1]);
+            $('.' + slider_container).attr('slider-end', next_frame_info[2]);
+            $('.' + slider_container).css('width', next_frame_info[0]);
+            if (next_frame_info[1] == 0) {
+                $('.' + slider_container + ' ul').css('left', 0);
+            } else {
+                $('.' + slider_container + ' ul').css('left', (current_left - curr_frame_info[0]));
+            }
+            autoplay_carousel();
+        }
+
+        function carousel_nav_left(slider_wrapper, slider_container) {
+            clearInterval(mySliderInterval);
+            var slider = $('.' + slider_container + ' ul').children();
+            prev_frame_info = prev_prev_slider_width(slider_wrapper, slider_container);
+            var current_left = parseInt($('.' + slider_container + ' ul').css('left'));
+
+            $('.' + slider_container).attr('slider-start', prev_frame_info[1]);
+            $('.' + slider_container).attr('slider-end', prev_frame_info[2]);
+            $('.' + slider_container).css('width', prev_frame_info[0]);
+            if (prev_frame_info[2] == (slider.length - 1)) {
+                var cal_width = 0;
+                var frame_width = 0;
+                for (var i = 0; i < slider.length; i++) {
+                    cal_width = parseInt(slider.eq(i).outerWidth(true));
+                    frame_width += cal_width;
+                }
+                $('.' + slider_container + ' ul').css('left', (-frame_width + prev_frame_info[0]));
+            } else {
+                $('.' + slider_container + ' ul').css('left', (current_left + prev_frame_info[0]));
+            }
+            autoplay_carousel();
+        }
+
+        function next_slider_width(slider_wrapper, slider_container) {
+            var slider_end = parseInt($('.' + slider_container).attr('slider-end')) || 0;
+            var slider_start = slider_end;
+            var container_width = parseInt($('.' + slider_wrapper).width());
+            var frame_width = 0;
+            var cal_width = 0;
+            var slider = $('.' + slider_container + ' ul').children();
+
+            if (slider_end == slider.length - 1) {
+                slider_end = 0;
+                slider_start = 0;
+            }
+            for (var i = slider_end; i < slider.length; i++) {
+                cal_width = parseInt(slider.eq(i).outerWidth(true));
+                frame_width += cal_width;
+                slider_end = i;
+                if (frame_width > container_width) {
+                    frame_width = frame_width - cal_width - 10;
+                    break;
+                }
+            }
+            return [frame_width, slider_start, slider_end]
+        }
+
+        function prev_slider_width(slider_wrapper, slider_container) {
+            var slider_start = parseInt($('.' + slider_container).attr('slider-start'));
+            var slider_end = parseInt($('.' + slider_container).attr('slider-end'));
+            var container_width = parseInt($('.' + slider_wrapper).width());
+            var slider = $('.' + slider_container + ' ul').children();
+            var frame_width = 0;
+            var cal_width = 0;
+            slider_end = slider_end - 1;
+            for (var i = slider_end; i >= slider_start; i--) {
+                cal_width = parseInt(slider.eq(i).outerWidth(true));
+                frame_width += cal_width;
+                if (frame_width > container_width) {
+                    frame_width = frame_width - cal_width - 10;
+                    break;
+                }
+            }
+            return [frame_width, slider_start, slider_end]
+        }
+
+        function prev_prev_slider_width(slider_wrapper, slider_container) {
+            var slider_start = parseInt($('.' + slider_container).attr('slider-start'));
+            var slider_end = parseInt($('.' + slider_container).attr('slider-end'));
+            var container_width = parseInt($('.' + slider_wrapper).width());
+            var slider = $('.' + slider_container + ' ul').children();
+            var frame_width = 0;
+            var cal_width = 0;
+            if (slider_start == 0) {
+                slider_start = slider.length - 1;
+            }
+            slider_end = slider_start;
+            for (var i = slider_start; i >= 0; i--) {
+                cal_width = parseInt(slider.eq(i).outerWidth(true));
+                frame_width += cal_width;
+                slider_start = i;
+                if (frame_width > container_width) {
+                    frame_width = frame_width - cal_width - 10;
+                    break;
+                }
+            }
+            return [frame_width, slider_start, slider_end]
+        }
+
+        function hide_info_modal(t) {
+            $(t).parent().parent().parent().hide();
+            $('html').css('overflow', 'auto');
+        }
+
+        function hide_popup(t) {
+            $(t).hide();
+            $('html').css('overflow', 'auto');
+        }
+
+        function hide_mask_popup(t) {
+            $(t).parent().hide();
+            $('html').css('overflow', 'auto');
+        }
+
+        function show_info_modal(t) {
+            var sctop = $('html').scrollTop();
+            $('html').scrollTop(sctop);
+            $(t).parent().children('.modal_wrapper').show();
+            $('html').css('overflow', 'hidden');
+        }
+
+        function autoplay_carousel() {
+            mySliderInterval = setInterval(function() {
+                carousel_nav_right('carousel_wrapper', 'carousel_container')
+            }, 6000);
+        }
+    </script>
+</body>
+
+</html>
