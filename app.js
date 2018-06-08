@@ -1,4 +1,9 @@
+'use strict';
+
+
 // importing modules
+const fs = require('fs');
+const https = require('https');
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyparser = require('body-parser');
@@ -45,6 +50,15 @@ app.use(bodyparser.json());
 
 //static files
 app.use(express.static(path.join(__dirname,'public')));
+
+// Open SSl
+/*
+const httpsOptions = {
+	cert: fs.readFileSync(path.join(__dirname, 'ssl', 'server.cert')),
+	key: fs.readFileSync(path.join(__dirname, 'ssl', 'server.cert'))
+}
+*/
+
 
 
 //routes

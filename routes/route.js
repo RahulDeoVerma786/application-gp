@@ -48,7 +48,7 @@ router.get('/mdp_pms',(req, res, next)=>{
 	// res.send('Retrieving the tokens list');
 	AddMdpPM.find(function(err,mdp_pms){
 		res.json(mdp_pms);
-	});
+	}).sort({startdate:'desc'});
 });
 
 router.get('/mdp_pos',(req, res, next)=>{
@@ -180,7 +180,9 @@ router.post('/mdp_pm',(req, res, next)=>{
 		category: req.body.caTegory,
 		newcategoryinfo: req.body.newCategoryInfo,
 		startdate: req.body.startDate,
-		starttime: req.body.startTime
+		starttime: req.body.startTime,
+		stopdate: req.body.stopDate,
+		stoptime: req.body.stopTime
 	});
 	newAddMdpPM.save((err,mdp_pm)=>{
 		if(err)

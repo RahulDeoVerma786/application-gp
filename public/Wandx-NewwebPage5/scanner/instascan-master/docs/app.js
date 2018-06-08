@@ -8,11 +8,15 @@ var app = new Vue({
   },
   mounted: function () {
     var self = this;
+    
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
       self.scans.unshift({ date: +(Date.now()), content: content });
+//console.log(self.scans)
+      window.location.href = "/Wandx-NewwebPage5/review.html#" + self.scans[0].content
     });
-    Instascan.Camera.getCameras().then(function (cameras) {
+    Instascan.Camera.getCameras().then((cameras) => {
+      console.log(cameras);
       self.cameras = cameras;
       if (cameras.length > 0) {
         self.activeCameraId = cameras[0].id;
@@ -20,7 +24,7 @@ var app = new Vue({
       } else {
         console.error('No cameras found.');
       }
-    }).catch(function (e) {
+    }).catch((e) => {
       console.error(e);
     });
   },

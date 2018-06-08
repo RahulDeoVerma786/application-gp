@@ -35,6 +35,14 @@ const MdpPMSchema = mongoose.Schema({
 	starttime:{
 		type: String,
 		required: true
+	},
+	stoptime:{
+		type: String,
+		required: true
+	},
+	stopdate:{
+		type: String,
+		required: true
 	}
 });
 

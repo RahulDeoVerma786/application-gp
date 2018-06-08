@@ -39,9 +39,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 </head>
 
 <body ng-app="myApp">
+    <div id="app1"></div>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">Manufacturing Downtime Reporting</a>
     </nav>
@@ -80,12 +83,17 @@
                       </div> -->
                       <div class="col-md-6">
                         <label for="machineID">Machine ID</label>
-                        <input type="text" class="form-control" id="machineID" placeholder="Machine ID" name="machineID" ng-model="pm.machineID" required>
+                        <input type="text" class="form-control" id="machineID" placeholder="Machine ID" name="machineID" ng-model="machineVar" required >
+                      </div>
+                      <div class="col-md-6">
+                          <label for="">Scan Now</label> <br>
+                          <a href="/Wandx-NewwebPage5/scanner/instascan-master/docs/index.html" class="btn btn-primary">Scan Now</a>
                       </div>
                       <div class="col-md-6">
                         <label for="operatorID">Operator ID</label>
                         <input type="text" class="form-control" id="operatorID" placeholder="Operator ID" name="operatorID" ng-model="pm.operatorID" required>
                       </div>
+
                       <!-- <div class="col-md-6" ng-controller="PostPm">
                         <label for="operatorID">Operator ID</label>
                         <select class="form-control" id="operatorID" name="operatorID" ng-model="pm.operatorID" required>
@@ -140,19 +148,33 @@
                   <div class="form-group row">
                       <div class="col-md-6">
                         <label for="startDate">Start Date</label>
-                        <input type="date" class="form-control" id="startDate" name="startDate" aria-describedby="emailHelp" ng-model="pm.startDate" required>
+                        <input type="date" class="form-control" id="startDate" name="startDate" aria-describedby="emailHelp" ng-model="sD" required>
                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                       </div>
                       <div class="col-md-6">
                         <label for="startTime">Start Time</label>
-                        <input type="time" class="form-control" id="startTime" name="startTime" ng-model="pm.startTime" required>
+                        <input type="time" class="form-control" id="startTime" name="startTime" ng-model="sT" required>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-md-6">
+                        <label for="startDate">Stop Date</label>
+                        <input type="date" class="form-control" id="stopDate" name="stopDate" aria-describedby="emailHelp" ng-model="stopD" required>
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                      </div>
+                      <div class="col-md-6">
+                        <label for="startTime">Stop Time</label>
+                        <input type="time" class="form-control" id="stopTime" name="stopTime" ng-model="stopT" required>
                       </div>
                   </div>
                   <!-- <div class="form-check">
+                    
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                   </div> -->
-                    <button type="button" class="btn btn-success col-md-2" ng-click="SubmitPm(pm)">Submit</button>
+                    <button type="button" class="btn btn-success col-md-2" ng-click="StartPm(pm)">Start</button> 
+                    <button type="button" class="btn btn-danger col-md-2" ng-click="StopPm(pm)">Stop</button>
+                    <button type="button" class="btn btn-info col-md-2" ng-click="SubmitPm(pm)">Submit</button>
                     <!-- <button type="button" class="btn btn-info col-md-2">Info</button>
                     <button type="button" class="btn btn-dark col-md-2">Clear All</button> -->
                   <!-- <button type="submit" class="btn btn-primary col-md-4">Submit</button> -->
@@ -371,6 +393,8 @@
                         <th scope="col">Extra Info</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">Start Time</th>
+                        <th scope="col">Stop Date</th>
+                        <th scope="col">Stop Time</th>
                       </tr>
                     </thead>
                     <tbody style="background-color: #bbbbee;">
@@ -382,8 +406,10 @@
                         <td>{{ x.linelocation }}</td>
                         <td>{{ x.category }}</td>
                         <td>{{ x.newcategoryinfo }}</td>
-                        <td>{{ x.startdate }}</td>
-                        <td>{{ x.starttime }}</td>
+                        <td>{{ x.startdate | date:'MM/dd/yyyy' }}</td>
+                        <td>{{ x.starttime | date:'h:mma' }}</td>
+                        <td>{{ x.stopdate  | date:'MM/dd/yyyy' }}</td>
+                        <td>{{ x.stoptime | date:'h:mma' }}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -536,31 +562,72 @@
             </div>
         </div>
     </div>
+
+    <script>
+      var app1 = new Vue({
+        el:"#app1",
+        data(){
+          return{
+              machineIdabc:""
+          }
+        },
+        methods:{
+            initPage(){
+                var url = String(window.location)
+                var res = url.split("#")
+                this.machineIdabc = res[1]
+            }
+        },
+        created(){
+            this.initPage()
+        }
+      });
+    </script>
+      <script>
+
+      </script>
     <script>
 
         var app = angular.module('myApp', []);
         app.controller("PostPm", function ($scope, $http){
+          $scope.machineVar = app1.machineIdabc;
+          $scope.sD = new Date()
+          
+            $scope.StopPm = function(pm){
+              $scope.stopD = new Date()
+              $scope.stopT = new Date()
+            };
+
+            $scope.StartPm = function(pm){
+              $scope.sT = new Date()
+            };
+
             $scope.SubmitPm = function(pm){
                 var data = {
-                  machineID: pm.machineID,
+                  machineID: this.machineVar,
                   operatorID: pm.operatorID,
                   floorLocation: pm.floorLocation,
                   sectionLocation: pm.sectionLocation,
                   lineLocation: pm.lineLocation,
                   caTegory: pm.caTegory,
                   newCategoryInfo: pm.newCategoryInfo,
-                  startDate: pm.startDate,
-                  startTime: pm.startTime
-            };
-
+                  startDate: this.sD,
+                  startTime: this.sT,
+                  stopDate: this.stopD,
+                  stopTime: this.stopT
+                };
+            
             $http({
                 url: 'http://localhost:3000/api/mdp_pm',
                 method: "POST",
                 data:  data,
                 headers: {'Content-Type': 'application/json'}
             });
-            
+
+            $scope.machineVar = "";
+
             window.location.reload();
+
             }
         });
         app.controller("PostPo", function ($scope, $http){
@@ -674,6 +741,7 @@
         //     $('#myInput').focus()
         // })
     </script>
+
 </body>
 
 </html>
